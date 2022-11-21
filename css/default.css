@@ -25,51 +25,74 @@ header {
 }
 
 main {
-    width: 100%;
     margin: 20px;
     margin-top: 0;
 }
 
 .main_parents {
-    display: table;
-    width: 100%;
+    display:flex;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .TBoS_trends {
-    border:1px solid gray;
+    border: 1px solid gray;
     background-color: white;
     padding-left: 10px;
-    display: table-cell;
-    width: 75%;
+    width: 60%;
+    margin-right: 2%;
 }
 
 .others {
-    display: table-cell;
-    background-color: cornflowerblue;
-    width: 25%;
+    /* border: 1px solid gray; */
+    background-color: lightgray;
+    width: 38%;
+}
+
+.only_twitter{
+    border: 1px solid gray;
+    background-color: white;
+    padding-left: 10px;
+
+}
+
+.only_google{
+    border: 1px solid gray;
+    background-color: white;
+    padding-left: 10px;
+    margin-top:10px;
 }
 
 .trend {
     text-decoration: underline;
     color: cornflowerblue;
-    font-size: 20px;
-}
-
-
-@media screen and (min-width:600px) {
-
-    .trend {
-        font-size: 25px;
-    }
-}
-
-@media screen and (min-width:1025px) {
-    .trend {
-        font-size: 30px;
-    }
+    font-size: 30px;
 }
 
 footer {
     background-color: white;
     color: gray;
+}
+
+/* スマホ用のレイアウト */
+@media screen and (max-width: 767px) {
+
+    .header_inner {
+        height: 80px;
+    }
+
+    main {
+        margin: 0px;
+    }
+
+    .main_parents {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .trend {
+        font-size: 20px;
+    }
 }
