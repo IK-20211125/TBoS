@@ -1,0 +1,75 @@
+html {
+    background-color: lightgray;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: darkslateblue;
+}
+
+.header_inner {
+    height: 80px;
+}
+
+
+.title {
+    text-align: center;
+    color: aliceblue;
+    font-size: 60px;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    margin: 20px;
+    margin-top: 0;
+}
+
+.main_parents {
+    display: table;
+    width: 100%;
+}
+
+.TBoS_trends {
+    border:1px solid gray;
+    background-color: white;
+    padding-left: 10px;
+    display: table-cell;
+    width: 75%;
+}
+
+.others {
+    display: table-cell;
+    background-color: cornflowerblue;
+    width: 25%;
+}
+
+.trend {
+    text-decoration: underline;
+    color: cornflowerblue;
+    font-size: 20px;
+}
+
+
+@media screen and (min-width:600px) {
+
+    .trend {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width:1025px) {
+    .trend {
+        font-size: 30px;
+    }
+}
+
+footer {
+    background-color: white;
+    color: gray;
+}
