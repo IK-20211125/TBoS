@@ -21,6 +21,34 @@
             </p>
 
         </div>
+
+        <nav class="mobile_nav">
+            <ul>
+                <li><a href="#TBoS_trends">TBoS&nbsp;&nbsp;&nbsp;</a></li>
+                <li><a href="#only_twitter_trends">Twitter</a></li>
+                <li><a href="#only_google_trends">Google&nbsp;</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var nav = $('.mobile_nav');
+                //navの位置    
+                var navTop = nav.offset().top;
+                //スクロールするたびに実行
+                $(window).scroll(function () {
+                    var winTop = $(this).scrollTop();
+                    //スクロール位置がnavの位置より下だったらクラスfixedを追加
+                    if (winTop >= navTop) {
+                        nav.addClass('fixed')
+                    } else if (winTop <= navTop) {
+                        nav.removeClass('fixed')
+                    }
+                });
+            });
+        </script> -->
         <!-- <hr noshade> -->
     </header>
 
@@ -28,7 +56,7 @@
 
         <div class="main_parents">
 
-            <div class="TBoS_trends">
+            <div id="TBoS_trends">
 
                 <h2>TBoSトレンド</h2>
 
@@ -56,17 +84,18 @@
 
                 <P class="tbos_trend">12.ルブラン</P>
 
+
             </div>
 
             <div class="others">
 
-                <div class="only_twitter_trends">
+                <div id="only_twitter_trends">
 
-                    <h3 class="twitter_title">OnlyTwitterトレンド</h3>
-                    
-                    <p class="twitter_trend">&nbsp;1.イレリア</p>
+                    <h4 class="twitter_title">OnlyTwitterトレンド</h4>
+
+                    <p class="twitter_trend">&nbsp;1.イレリアはライン戦にてEを当てるかどうかですべて決まる</p>
                     <p class="twitter_trend">&nbsp;2.イレリア</p>
-                    <p class="twitter_trend">&nbsp;3.イレリア</p>
+                    <p class="twitter_trend">&nbsp;3.イレリアはライン戦にてEを当てるかどうかですべて決まる</p>
                     <p class="twitter_trend">&nbsp;4.イレリア</p>
                     <p class="twitter_trend">&nbsp;5.イレリア</p>
                     <p class="twitter_trend">&nbsp;6.イレリア</p>
@@ -80,8 +109,8 @@
 
 
                 </div>
-                <div class="only_google_trends">
-                    <h3 class="google_title">OnlyGoogleトレンド</h3>
+                <div id="only_google_trends">
+                    <h4 class="google_title">OnlyGoogleトレンド</h4>
                     <p class="google_trend">&nbsp;1.カサンテ</p>
                     <p class="google_trend">&nbsp;2.カサンテ</p>
                     <p class="google_trend">&nbsp;3.カサンテ</p>

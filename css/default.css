@@ -9,6 +9,7 @@ body {
 }
 
 header {
+    position: relative;
     background-color: darkslateblue;
     box-shadow: 0 0 10px grey;
     margin-bottom: 20px;
@@ -18,6 +19,35 @@ header {
     height: 80px;
 }
 
+.mobile_nav {
+    display: none;
+    background-color: darkslateblue;
+    z-index:10000;
+    font-size: 18px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.mobile_nav ul {
+    list-style: none;
+    display: flex;
+    margin:10px;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.mobile_nav li {
+    margin-left: 30px;
+    margin-right: 30px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
 
 .title {
     text-align: center;
@@ -38,34 +68,36 @@ main {
     margin-right: 15%;
 }
 
-.TBoS_trends {
-    overflow:scroll;
+#TBoS_trends {
+    overflow: scroll;
     background-color: white;
-    height:83vh;
+    height: 83vh;
     width: 60%;
     margin-right: 2%;
     box-shadow: 0 0 6px grey;
 }
 
-.TBoS_trends::-webkit-scrollbar{
+#TBoS_trends::-webkit-scrollbar {
     display: none;
 }
 
 h2 {
+    position: sticky;
+    top: 0;
     margin-top: 0px;
-    position:relative;
-    border-bottom:3px solid #819dfa;
+    border-bottom: 3px solid #819dfa;
     background-color: lightgrey;
-    color:#34495E;
+    color: #34495E;
     padding-left: 75px;
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
 h2:before {
     font-family: 'Font Awesome 6 Free';
     font-size: 50px;
     content: '\e098';
-    color:orange;
+    color: orange;
     display: block;
     position: absolute;
     top: 50%;
@@ -86,28 +118,35 @@ h2:before {
     width: 38%;
 }
 
-.only_twitter_trends {
+#only_twitter_trends {
+    overflow: scroll;
+    height: 48.27vh;
     box-shadow: 0 0 4px grey;
     background-color: white;
-    
 
 }
 
-h3.twitter_title {
+#only_twitter_trends::-webkit-scrollbar {
+    display: none;
+}
+
+h4.twitter_title {
+    top: 0;
     margin-top: 0px;
-    position:relative;
-    border-bottom:3px solid #819dfa;
+    position: sticky;
+    border-bottom: 3px solid #819dfa;
     background-color: lightgrey;
-    color:#34495E;
+    color: #34495E;
     padding-left: 55px;
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-h3.twitter_title:before {
+
+h4.twitter_title:before {
     font-family: 'Font Awesome 6 Brands';
-    font-size: 40px;
+    font-size: 30px;
     content: '\f099';
-    color:#6989f3;
+    color: #6989f3;
     display: block;
     position: absolute;
     top: 50%;
@@ -116,34 +155,42 @@ h3.twitter_title:before {
     transform: translateY(-50%);
 }
 
-.twitter_trend{
+.twitter_trend {
     text-decoration: underline;
     color: cornflowerblue;
     font-size: 20px;
     padding: 10px;
 }
 
-.only_google_trends {
+#only_google_trends {
+    overflow: scroll;
+    height: 32.18vh;
     box-shadow: 0 0 4px grey;
     background-color: white;
     margin-top: 15px;
 }
 
-h3.google_title {
-    margin-top: 0px;
-    position:relative;
-    border-bottom:3px solid #819dfa;
-    background-color: lightgrey;
-    color:#34495E;
-    padding-left: 55px;
-    padding-top:20px;
-    padding-bottom:20px;
+#only_google_trends::-webkit-scrollbar {
+    display: none;
 }
-h3.google_title:before {
+
+h4.google_title {
+    top: 0;
+    margin-top: 0px;
+    position: sticky;
+    border-bottom: 3px solid #819dfa;
+    background-color: lightgrey;
+    color: #34495E;
+    padding-left: 55px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h4.google_title:before {
     font-family: 'Font Awesome 6 Brands';
-    font-size: 40px;
+    font-size: 30px;
     content: '\f1a0';
-    color:#6989f3;
+    color: #6989f3;
     display: block;
     position: absolute;
     top: 50%;
@@ -152,7 +199,7 @@ h3.google_title:before {
     transform: translateY(-50%);
 }
 
-.google_trend{
+.google_trend {
     text-decoration: underline;
     color: cornflowerblue;
     font-size: 20px;
@@ -187,19 +234,23 @@ footer {
         margin-right: 1%;
     }
 
-    .TBoS_trends {
+    #TBoS_trends {
         overflow: hidden;
-        height:auto;
+        height: auto;
         width: 100%;
     }
 
-    .only_twitter_trends {
+    #only_twitter_trends {
+        overflow: hidden;
+        height: auto;
         width: 98vw;
         margin-top: 15px;
 
     }
 
-    .only_google_trends {
+    #only_google_trends {
+        overflow: hidden;
+        height: auto;
         width: 98vw;
         margin-bottom: 15px;
     }
@@ -208,11 +259,11 @@ footer {
         font-size: 20px;
     }
 
-    .twitter_trend{
-        font-size:20px;
+    .twitter_trend {
+        font-size: 20px;
     }
 
-    .google_trend{
+    .google_trend {
         font-size: 20px;
     }
 }
