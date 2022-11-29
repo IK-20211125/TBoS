@@ -12,7 +12,7 @@ header {
     position: relative;
     background-color: darkslateblue;
     box-shadow: 0 0 10px grey;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .header_inner {
