@@ -16,13 +16,13 @@ header {
 }
 
 .header_inner {
-    height: 80px;
+    height: 57px;
 }
 
 .mobile_nav {
     display: none;
     background-color: darkslateblue;
-    z-index:10000;
+    z-index: 10000;
     font-size: 18px;
     position: fixed;
     bottom: 0;
@@ -33,7 +33,7 @@ header {
 .mobile_nav ul {
     list-style: none;
     display: flex;
-    margin:10px;
+    margin: 10px;
     justify-content: center;
     padding-left: 0;
 }
@@ -52,13 +52,14 @@ a {
 .title {
     text-align: center;
     color: aliceblue;
-    font-size: 60px;
+    font-size: 40px;
     margin: 0;
 }
 
 main {
     margin: 20px;
     margin-top: 0;
+    margin-bottom: 0px;
 }
 
 .main_parents {
@@ -110,6 +111,7 @@ h2:before {
     text-decoration: underline;
     color: cornflowerblue;
     font-size: 30px;
+    margin-top: 35px;
     padding-left: 10px;
 }
 
@@ -207,12 +209,14 @@ h4.google_title:before {
 }
 
 footer {
-    background-color: white;
+    /* background-color: white; */
+    background-color: whitesmoke;
     color: #757575;
-    border: 1px solid #E6E7E8;
-    padding: 10px;
-    padding-bottom: 60px;
-    text-align: center;
+    /* border: 1px solid #E6E7E8; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px; */
+    padding-right: 10px;
+    text-align: right;
 
 }
 
@@ -221,6 +225,10 @@ footer {
 
     .header_inner {
         height: 80px;
+    }
+
+    .mobile_nav {
+        display: block;
     }
 
     main {
@@ -265,5 +273,14 @@ footer {
 
     .google_trend {
         font-size: 20px;
+    }
+
+    footer {
+        /* background-color: white; */
+        /* border: 1px solid #E6E7E8;  */
+        padding: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 60px;
+        text-align: center;
     }
 }

@@ -9,6 +9,30 @@
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="css/default.css">
+
+    <!-- jQuery.jsの読み込み -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+    <!-- スムーズスクロール部分の記述 -->
+    <script>
+        $(function () {
+            // #で始まるアンカーをクリックした場合に処理
+            $('a[href^=#]').click(function () {
+                // スクロールの速度
+                var speed = 400; // ミリ秒
+                // アンカーの値取得
+                var href = $(this).attr("href");
+                // 移動先を取得
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                // 移動先を数値で取得
+                var position = target.offset().top;
+                // スムーススクロール
+                $('body,html').animate({ scrollTop: position }, speed, 'swing');
+                return false;
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -31,24 +55,7 @@
 
         </nav>
 
-        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(function () {
-                var nav = $('.mobile_nav');
-                //navの位置    
-                var navTop = nav.offset().top;
-                //スクロールするたびに実行
-                $(window).scroll(function () {
-                    var winTop = $(this).scrollTop();
-                    //スクロール位置がnavの位置より下だったらクラスfixedを追加
-                    if (winTop >= navTop) {
-                        nav.addClass('fixed')
-                    } else if (winTop <= navTop) {
-                        nav.removeClass('fixed')
-                    }
-                });
-            });
-        </script> -->
+
         <!-- <hr noshade> -->
     </header>
 
@@ -95,7 +102,7 @@
 
                     <p class="twitter_trend">&nbsp;1.イレリアはライン戦にてEを当てるかどうかですべて決まる</p>
                     <p class="twitter_trend">&nbsp;2.イレリア</p>
-                    <p class="twitter_trend">&nbsp;3.イレリアはライン戦にてEを当てるかどうかですべて決まる</p>
+                    <p class="twitter_trend">&nbsp;3.イレリアはライン戦</p>
                     <p class="twitter_trend">&nbsp;4.イレリア</p>
                     <p class="twitter_trend">&nbsp;5.イレリア</p>
                     <p class="twitter_trend">&nbsp;6.イレリア</p>
