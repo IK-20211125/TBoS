@@ -1,3 +1,6 @@
+
+/* 大枠の設定 */
+
 html {
     background-color: whitesmoke;
     overflow-x: hidden;
@@ -8,16 +11,27 @@ body {
     margin: 0;
 }
 
+/* header関連 */
+
 header {
     position: relative;
     background-color: darkslateblue;
     box-shadow: 0 0 10px grey;
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 }
 
 .header_inner {
     height: 57px;
 }
+
+.title {
+    text-align: center;
+    color: aliceblue;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* スマホのみのナビ */
 
 .mobile_nav {
     display: none;
@@ -41,8 +55,8 @@ header {
 .mobile_nav li {
     margin-left: 5px;
     margin-right: 5px;
-    padding-right:15px;
-    padding-left:15px;
+    padding-right: 15px;
+    padding-left: 15px;
     text-align: justify;
     color: white;
 }
@@ -52,12 +66,7 @@ a {
     color: white;
 }
 
-.title {
-    text-align: center;
-    color: aliceblue;
-    font-size: 40px;
-    margin: 0;
-}
+/* メインコンテンツの設定 */
 
 main {
     margin: 20px;
@@ -71,6 +80,8 @@ main {
     margin-left: 15%;
     margin-right: 15%;
 }
+
+/* TBoSトレンド関連 */
 
 #TBoS_trends {
     overflow: scroll;
@@ -110,18 +121,38 @@ h2:before {
     transform: translateY(-50%);
 }
 
-.tbos_trend {
-    text-decoration: underline;
+.number{
+    color: orange;
+    font-size: 35px;
+}
+
+.data_of_tbos{
+    cursor:pointer;
+    text-decoration: none;
+    color: #34495E;
+}
+
+.data_of_tbos:hover{
     color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.tbos_trend {
+    text-decoration: none;
     font-size: 30px;
-    margin-top: 35px;
+    margin-top: 25px;
+    margin-bottom:0px;
     padding-left: 10px;
 }
+
+/* TBoS以外のトレンド */
 
 .others {
     background-color: whitesmoke;
     width: 38%;
 }
+
+/* Twitterトレンド関連 */
 
 #only_twitter_trends {
     overflow: scroll;
@@ -167,6 +198,8 @@ h4.twitter_title:before {
     padding: 10px;
 }
 
+/* Googleトレンド関連 */
+
 #only_google_trends {
     overflow: scroll;
     height: 32.18vh;
@@ -211,6 +244,8 @@ h4.google_title:before {
     padding: 10px;
 }
 
+/* footer関連 */
+
 footer {
     /* background-color: white; */
     background-color: whitesmoke;
@@ -223,7 +258,47 @@ footer {
 
 }
 
+/* アコーディオンメニュー */
+
+input {
+    display: none;
+}
+
+.tbos_text {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#menu_bar01:checked~#links01,
+#menu_bar02:checked~#links02,
+#menu_bar03:checked~#links03,
+#menu_bar04:checked~#links04,
+#menu_bar05:checked~#links05,
+#menu_bar06:checked~#links06,
+#menu_bar07:checked~#links07,
+#menu_bar08:checked~#links08,
+#menu_bar09:checked~#links09,
+#menu_bar10:checked~#links10,
+#menu_bar11:checked~#links11,
+#menu_bar12:checked~#links12,
+#menu_bar11:checked~#links13
+ {
+    border-bottom: 1px solid #E6E7E8;
+    height: 54px;
+    opacity: 1;
+}
+
+.tbos_content_13{
+    display: none;
+}
+
 /* スマホ用のレイアウト */
+
 @media screen and (max-width: 767px) {
 
     .header_inner {
@@ -249,6 +324,7 @@ footer {
         overflow: hidden;
         height: auto;
         width: 100%;
+        padding-bottom: 30px;
     }
 
     #only_twitter_trends {
