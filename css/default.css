@@ -121,7 +121,7 @@ h2:before {
     transform: translateY(-50%);
 }
 
-.number{
+.tbos_number{
     color: orange;
     font-size: 35px;
 }
@@ -143,6 +143,13 @@ h2:before {
     margin-top: 25px;
     margin-bottom:0px;
     padding-left: 10px;
+    margin-left: 1.75em;
+    text-indent: -1.75em;
+}
+
+
+.tbos_content_13{
+    display: none;
 }
 
 /* TBoS以外のトレンド */
@@ -191,11 +198,30 @@ h4.twitter_title:before {
     transform: translateY(-50%);
 }
 
-.twitter_trend {
+.twitter_number{
+    color: #6989f3;
+    font-size: 25px;
+}
+
+.data_of_twitter{
+    cursor:pointer;
+    text-decoration: none;
+    color: #34495E;
+}
+
+.data_of_twitter:hover{
+    color: cornflowerblue;
     text-decoration: underline;
+}
+
+.twitter_trend {
     color: cornflowerblue;
     font-size: 20px;
+    margin-bottom: 5px;
+    margin-top:0px;
     padding: 10px;
+    margin-left: 2.1em;
+    text-indent: -2.1em;
 }
 
 /* Googleトレンド関連 */
@@ -237,11 +263,30 @@ h4.google_title:before {
     transform: translateY(-50%);
 }
 
-.google_trend {
+.google_number{
+    font-size: 25px;
+    color: #6989f3;
+}
+
+.data_of_google{
+    cursor:pointer;
+    text-decoration: none;
+    color: #34495E;
+}
+
+.data_of_google:hover{
+    color: cornflowerblue;
     text-decoration: underline;
+}
+
+.google_trend {
     color: cornflowerblue;
     font-size: 20px;
+    margin-bottom: 5px;
+    margin-top:0px;
     padding: 10px;
+    margin-left: 2.1em;
+    text-indent: -2.1em;
 }
 
 /* footer関連 */
@@ -264,7 +309,7 @@ input {
     display: none;
 }
 
-.tbos_text {
+.content_text {
     height: 0;
     overflow: hidden;
     -webkit-transition: all 0.5s;
@@ -274,27 +319,53 @@ input {
     transition: all 0.5s;
 }
 
-#menu_bar01:checked~#links01,
-#menu_bar02:checked~#links02,
-#menu_bar03:checked~#links03,
-#menu_bar04:checked~#links04,
-#menu_bar05:checked~#links05,
-#menu_bar06:checked~#links06,
-#menu_bar07:checked~#links07,
-#menu_bar08:checked~#links08,
-#menu_bar09:checked~#links09,
-#menu_bar10:checked~#links10,
-#menu_bar11:checked~#links11,
-#menu_bar12:checked~#links12,
-#menu_bar11:checked~#links13
+/* TBoSのメニュー */
+
+
+#tbos_menu_bar01:checked~#tbos_links01,
+#tbos_menu_bar02:checked~#tbos_links02,
+#tbos_menu_bar03:checked~#tbos_links03,
+#tbos_menu_bar04:checked~#tbos_links04,
+#tbos_menu_bar05:checked~#tbos_links05,
+#tbos_menu_bar06:checked~#tbos_links06,
+#tbos_menu_bar07:checked~#tbos_links07,
+#tbos_menu_bar08:checked~#tbos_links08,
+#tbos_menu_bar09:checked~#tbos_links09,
+#tbos_menu_bar10:checked~#tbos_links10,
+#tbos_menu_bar11:checked~#tbos_links11,
+#tbos_menu_bar12:checked~#tbos_links12,
+#tbos_menu_bar11:checked~#tbos_links13
  {
     border-bottom: 1px solid #E6E7E8;
     height: 54px;
     opacity: 1;
 }
 
-.tbos_content_13{
-    display: none;
+
+/* Twitterのメニュー */
+
+#twitter_menu_bar01:checked~#twitter_links01,
+#twitter_menu_bar02:checked~#twitter_links02,
+#twitter_menu_bar03:checked~#twitter_links03,
+#twitter_menu_bar04:checked~#twitter_links04,
+#twitter_menu_bar05:checked~#twitter_links05,
+#twitter_menu_bar06:checked~#twitter_links06,
+#twitter_menu_bar07:checked~#twitter_links07
+ {
+    border-bottom: 1px solid #E6E7E8;
+    height: 30px;
+    opacity: 1;
+}
+
+/* Googleのメニュー */
+
+#google_menu_bar01:checked~#google_links01,
+#google_menu_bar02:checked~#google_links02,
+#google_menu_bar03:checked~#google_links03
+ {
+    border-bottom: 1px solid #E6E7E8;
+    height: 30px;
+    opacity: 1;
 }
 
 /* スマホ用のレイアウト */
@@ -350,8 +421,16 @@ input {
         font-size: 20px;
     }
 
+    .twitter_number{
+        font-size: 30px;
+    }
+
     .google_trend {
         font-size: 20px;
+    }
+
+    .google_number{
+        font-size: 30px;
     }
 
     footer {
