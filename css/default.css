@@ -389,7 +389,9 @@ input {
 @media screen and (max-width: 767px) {
 
     .header_inner {
-        height: 80px;
+        padding-top:8px;
+        padding-bottom:8px;
+        /* height: 80px; */
     }
 
     .mobile_nav {
