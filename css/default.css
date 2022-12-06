@@ -1,4 +1,3 @@
-
 /* 大枠の設定 */
 
 html {
@@ -9,6 +8,13 @@ html {
 body {
     font-family: sans-serif;
     margin: 0;
+
+    /* 文字選択の禁止 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
 
 /* header関連 */
@@ -121,18 +127,18 @@ h2:before {
     transform: translateY(-50%);
 }
 
-.tbos_number{
+.tbos_number {
     color: orange;
     font-size: 35px;
 }
 
-.data_of_tbos{
-    cursor:pointer;
+.data_of_tbos {
+    cursor: pointer;
     text-decoration: none;
     color: #34495E;
 }
 
-.data_of_tbos:hover{
+.data_of_tbos:hover {
     color: cornflowerblue;
     text-decoration: underline;
 }
@@ -141,14 +147,14 @@ h2:before {
     text-decoration: none;
     font-size: 30px;
     margin-top: 25px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
     padding-left: 10px;
     margin-left: 1.75em;
     text-indent: -1.75em;
 }
 
 
-.tbos_content_13{
+.tbos_content_13 {
     display: none;
 }
 
@@ -157,6 +163,7 @@ h2:before {
 .others {
     background-color: whitesmoke;
     width: 38%;
+    height: 83vh;
 }
 
 /* Twitterトレンド関連 */
@@ -198,18 +205,18 @@ h4.twitter_title:before {
     transform: translateY(-50%);
 }
 
-.twitter_number{
+.twitter_number {
     color: #6989f3;
     font-size: 25px;
 }
 
-.data_of_twitter{
-    cursor:pointer;
+.data_of_twitter {
+    cursor: pointer;
     text-decoration: none;
     color: #34495E;
 }
 
-.data_of_twitter:hover{
+.data_of_twitter:hover {
     color: cornflowerblue;
     text-decoration: underline;
 }
@@ -218,7 +225,7 @@ h4.twitter_title:before {
     color: cornflowerblue;
     font-size: 20px;
     margin-bottom: 5px;
-    margin-top:0px;
+    margin-top: 0px;
     padding: 10px;
     margin-left: 2.1em;
     text-indent: -2.1em;
@@ -231,7 +238,7 @@ h4.twitter_title:before {
     height: 32.18vh;
     box-shadow: 0 0 4px grey;
     background-color: white;
-    margin-top: 15px;
+    margin-top: 2.55vh;
 }
 
 #only_google_trends::-webkit-scrollbar {
@@ -263,18 +270,18 @@ h4.google_title:before {
     transform: translateY(-50%);
 }
 
-.google_number{
+.google_number {
     font-size: 25px;
     color: #6989f3;
 }
 
-.data_of_google{
-    cursor:pointer;
+.data_of_google {
+    cursor: pointer;
     text-decoration: none;
     color: #34495E;
 }
 
-.data_of_google:hover{
+.data_of_google:hover {
     color: cornflowerblue;
     text-decoration: underline;
 }
@@ -283,7 +290,7 @@ h4.google_title:before {
     color: cornflowerblue;
     font-size: 20px;
     margin-bottom: 5px;
-    margin-top:0px;
+    margin-top: 0px;
     padding: 10px;
     margin-left: 2.1em;
     text-indent: -2.1em;
@@ -310,13 +317,25 @@ input {
 }
 
 .content_text {
-    height: 0;
+    display: flex;
+    height: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
     overflow: hidden;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.tbos_graph_parents {
+    width: 150px;
+    height: 1000px;
+}
+
+.tbos_news_link{
+    color:#6989f3;
 }
 
 /* TBoSのメニュー */
@@ -334,10 +353,9 @@ input {
 #tbos_menu_bar10:checked~#tbos_links10,
 #tbos_menu_bar11:checked~#tbos_links11,
 #tbos_menu_bar12:checked~#tbos_links12,
-#tbos_menu_bar11:checked~#tbos_links13
- {
+#tbos_menu_bar11:checked~#tbos_links13 {
     border-bottom: 1px solid #E6E7E8;
-    height: 54px;
+    height: 130px;
     opacity: 1;
 }
 
@@ -350,8 +368,7 @@ input {
 #twitter_menu_bar04:checked~#twitter_links04,
 #twitter_menu_bar05:checked~#twitter_links05,
 #twitter_menu_bar06:checked~#twitter_links06,
-#twitter_menu_bar07:checked~#twitter_links07
- {
+#twitter_menu_bar07:checked~#twitter_links07 {
     border-bottom: 1px solid #E6E7E8;
     height: 30px;
     opacity: 1;
@@ -361,8 +378,7 @@ input {
 
 #google_menu_bar01:checked~#google_links01,
 #google_menu_bar02:checked~#google_links02,
-#google_menu_bar03:checked~#google_links03
- {
+#google_menu_bar03:checked~#google_links03 {
     border-bottom: 1px solid #E6E7E8;
     height: 30px;
     opacity: 1;
@@ -382,6 +398,10 @@ input {
 
     main {
         margin: 0px;
+    }
+
+    .others {
+        height: auto;
     }
 
     .main_parents {
@@ -421,7 +441,7 @@ input {
         font-size: 20px;
     }
 
-    .twitter_number{
+    .twitter_number {
         font-size: 30px;
     }
 
@@ -429,7 +449,7 @@ input {
         font-size: 20px;
     }
 
-    .google_number{
+    .google_number {
         font-size: 30px;
     }
 
