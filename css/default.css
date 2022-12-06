@@ -1,0 +1,466 @@
+/* 大枠の設定 */
+
+html {
+    background-color: whitesmoke;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+
+    /* 文字選択の禁止 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+/* header関連 */
+
+header {
+    position: relative;
+    background-color: darkslateblue;
+    box-shadow: 0 0 10px grey;
+    margin-bottom: 17px;
+}
+
+.header_inner {
+    height: 57px;
+}
+
+.title {
+    text-align: center;
+    color: aliceblue;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* スマホのみのナビ */
+
+.mobile_nav {
+    display: none;
+    background-color: darkslateblue;
+    z-index: 10000;
+    font-size: 18px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.mobile_nav ul {
+    list-style: none;
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.mobile_nav li {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: justify;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* メインコンテンツの設定 */
+
+main {
+    margin: 20px;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+.main_parents {
+    display: flex;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/* TBoSトレンド関連 */
+
+#TBoS_trends {
+    overflow: scroll;
+    background-color: white;
+    height: 83vh;
+    width: 60%;
+    margin-right: 2%;
+    box-shadow: 0 0 6px grey;
+}
+
+#TBoS_trends::-webkit-scrollbar {
+    display: none;
+}
+
+h2 {
+    position: sticky;
+    top: 0;
+    margin-top: 0px;
+    border-bottom: 3px solid #819dfa;
+    background-color: lightgrey;
+    color: #34495E;
+    padding-left: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h2:before {
+    font-family: 'Font Awesome 6 Free';
+    font-size: 50px;
+    content: '\e098';
+    color: orange;
+    display: block;
+    position: absolute;
+    top: 50%;
+    padding-left: 5px;
+    left: 3px;
+    transform: translateY(-50%);
+}
+
+.tbos_number {
+    color: orange;
+    font-size: 35px;
+}
+
+.data_of_tbos {
+    cursor: pointer;
+    text-decoration: none;
+    color: #34495E;
+}
+
+.data_of_tbos:hover {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.tbos_trend {
+    text-decoration: none;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    margin-left: 1.75em;
+    text-indent: -1.75em;
+}
+
+
+.tbos_content_13 {
+    display: none;
+}
+
+/* TBoS以外のトレンド */
+
+.others {
+    background-color: whitesmoke;
+    width: 38%;
+    height: 83vh;
+}
+
+/* Twitterトレンド関連 */
+
+#only_twitter_trends {
+    overflow: scroll;
+    height: 48.27vh;
+    box-shadow: 0 0 4px grey;
+    background-color: white;
+
+}
+
+#only_twitter_trends::-webkit-scrollbar {
+    display: none;
+}
+
+h4.twitter_title {
+    top: 0;
+    margin-top: 0px;
+    position: sticky;
+    border-bottom: 3px solid #819dfa;
+    background-color: lightgrey;
+    color: #34495E;
+    padding-left: 55px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h4.twitter_title:before {
+    font-family: 'Font Awesome 6 Brands';
+    font-size: 30px;
+    content: '\f099';
+    color: #6989f3;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    padding-left: 5px;
+    transform: translateY(-50%);
+}
+
+.twitter_number {
+    color: #6989f3;
+    font-size: 25px;
+}
+
+.data_of_twitter {
+    cursor: pointer;
+    text-decoration: none;
+    color: #34495E;
+}
+
+.data_of_twitter:hover {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.twitter_trend {
+    color: cornflowerblue;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    padding: 10px;
+    margin-left: 2.1em;
+    text-indent: -2.1em;
+}
+
+/* Googleトレンド関連 */
+
+#only_google_trends {
+    overflow: scroll;
+    height: 32.18vh;
+    box-shadow: 0 0 4px grey;
+    background-color: white;
+    margin-top: 2.55vh;
+}
+
+#only_google_trends::-webkit-scrollbar {
+    display: none;
+}
+
+h4.google_title {
+    top: 0;
+    margin-top: 0px;
+    position: sticky;
+    border-bottom: 3px solid #819dfa;
+    background-color: lightgrey;
+    color: #34495E;
+    padding-left: 55px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h4.google_title:before {
+    font-family: 'Font Awesome 6 Brands';
+    font-size: 30px;
+    content: '\f1a0';
+    color: #6989f3;
+    display: block;
+    position: absolute;
+    top: 50%;
+    padding-left: 5px;
+    left: 3px;
+    transform: translateY(-50%);
+}
+
+.google_number {
+    font-size: 25px;
+    color: #6989f3;
+}
+
+.data_of_google {
+    cursor: pointer;
+    text-decoration: none;
+    color: #34495E;
+}
+
+.data_of_google:hover {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.google_trend {
+    color: cornflowerblue;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    padding: 10px;
+    margin-left: 2.1em;
+    text-indent: -2.1em;
+}
+
+/* footer関連 */
+
+footer {
+    /* background-color: white; */
+    background-color: whitesmoke;
+    color: #757575;
+    /* border: 1px solid #E6E7E8; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px; */
+    padding-right: 10px;
+    text-align: right;
+
+}
+
+/* アコーディオンメニュー */
+
+input {
+    display: none;
+}
+
+.content_text {
+    display: flex;
+    height: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.tbos_graph_parents {
+    width: 150px;
+    height: 1000px;
+}
+
+.tbos_news_link{
+    color:#6989f3;
+}
+
+/* TBoSのメニュー */
+
+
+#tbos_menu_bar01:checked~#tbos_links01,
+#tbos_menu_bar02:checked~#tbos_links02,
+#tbos_menu_bar03:checked~#tbos_links03,
+#tbos_menu_bar04:checked~#tbos_links04,
+#tbos_menu_bar05:checked~#tbos_links05,
+#tbos_menu_bar06:checked~#tbos_links06,
+#tbos_menu_bar07:checked~#tbos_links07,
+#tbos_menu_bar08:checked~#tbos_links08,
+#tbos_menu_bar09:checked~#tbos_links09,
+#tbos_menu_bar10:checked~#tbos_links10,
+#tbos_menu_bar11:checked~#tbos_links11,
+#tbos_menu_bar12:checked~#tbos_links12,
+#tbos_menu_bar11:checked~#tbos_links13 {
+    border-bottom: 1px solid #E6E7E8;
+    height: 130px;
+    opacity: 1;
+}
+
+
+/* Twitterのメニュー */
+
+#twitter_menu_bar01:checked~#twitter_links01,
+#twitter_menu_bar02:checked~#twitter_links02,
+#twitter_menu_bar03:checked~#twitter_links03,
+#twitter_menu_bar04:checked~#twitter_links04,
+#twitter_menu_bar05:checked~#twitter_links05,
+#twitter_menu_bar06:checked~#twitter_links06,
+#twitter_menu_bar07:checked~#twitter_links07 {
+    border-bottom: 1px solid #E6E7E8;
+    height: 30px;
+    opacity: 1;
+}
+
+/* Googleのメニュー */
+
+#google_menu_bar01:checked~#google_links01,
+#google_menu_bar02:checked~#google_links02,
+#google_menu_bar03:checked~#google_links03 {
+    border-bottom: 1px solid #E6E7E8;
+    height: 30px;
+    opacity: 1;
+}
+
+/* スマホ用のレイアウト */
+
+@media screen and (max-width: 767px) {
+
+    .header_inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        /* height: 80px; */
+    }
+
+    .mobile_nav {
+        display: block;
+    }
+
+    main {
+        margin: 0px;
+    }
+
+    .others {
+        height: auto;
+    }
+
+    .main_parents {
+        display: block;
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    #TBoS_trends {
+        overflow: hidden;
+        height: auto;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    #only_twitter_trends {
+        overflow: hidden;
+        height: auto;
+        width: 98vw;
+        margin-top: 15px;
+
+    }
+
+    #only_google_trends {
+        overflow: hidden;
+        height: auto;
+        width: 98vw;
+        margin-bottom: 15px;
+    }
+
+    .tbos_trend {
+        font-size: 20px;
+    }
+
+    .twitter_trend {
+        font-size: 20px;
+    }
+
+    .twitter_number {
+        font-size: 30px;
+    }
+
+    .google_trend {
+        font-size: 20px;
+    }
+
+    .google_number {
+        font-size: 30px;
+    }
+
+    footer {
+        /* background-color: white; */
+        /* border: 1px solid #E6E7E8;  */
+        padding: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+}
