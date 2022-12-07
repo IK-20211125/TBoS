@@ -6,7 +6,10 @@ html {
 }
 
 body {
+
+    /* フォント */
     font-family: sans-serif;
+    
     margin: 0;
 
     /* 文字選択の禁止 */
@@ -31,10 +34,16 @@ header {
 }
 
 .title {
+    padding-top: 5px;
     text-align: center;
     color: aliceblue;
     font-size: 40px;
     margin: 0;
+}
+
+.tbos_title{
+    width:120px;
+    height:35px;
 }
 
 /* スマホのみのナビ */
@@ -90,6 +99,10 @@ main {
 /* TBoSトレンド関連 */
 
 #TBoS_trends {
+
+    /* カウンター */
+    counter-reset: number 0;
+
     overflow: scroll;
     background-color: white;
     height: 83vh;
@@ -127,10 +140,10 @@ h2:before {
     transform: translateY(-50%);
 }
 
-.tbos_number {
+/* .tbos_number {
     color: orange;
     font-size: 35px;
-}
+} */
 
 .data_of_tbos {
     cursor: pointer;
@@ -148,9 +161,25 @@ h2:before {
     font-size: 30px;
     margin-top: 25px;
     margin-bottom: 0px;
+    padding-right:10px;
     padding-left: 10px;
-    margin-left: 1.75em;
-    text-indent: -1.75em;
+    margin-left: 2.5em;
+    text-indent: -2.5em;
+}
+
+/* カウンター */
+.tbos_trend:before{
+
+    /* number カウンタの増加数をセット */
+    counter-increment: number 1;
+
+    /* 表示形式を指定 */
+    content: counter(number) " ";
+
+    text-align: center;
+    
+    color: orange;
+    font-size: 35px;
 }
 
 
@@ -169,6 +198,10 @@ h2:before {
 /* Twitterトレンド関連 */
 
 #only_twitter_trends {
+
+    /* カウンター */
+    counter-reset: number 0;
+
     overflow: scroll;
     height: 48.27vh;
     box-shadow: 0 0 4px grey;
@@ -180,9 +213,10 @@ h2:before {
     display: none;
 }
 
-h4.twitter_title {
+h3.twitter_title {
     top: 0;
     margin-top: 0px;
+    margin-bottom: 10px;
     position: sticky;
     border-bottom: 3px solid #819dfa;
     background-color: lightgrey;
@@ -192,7 +226,7 @@ h4.twitter_title {
     padding-bottom: 10px;
 }
 
-h4.twitter_title:before {
+h3.twitter_title:before {
     font-family: 'Font Awesome 6 Brands';
     font-size: 30px;
     content: '\f099';
@@ -205,10 +239,10 @@ h4.twitter_title:before {
     transform: translateY(-50%);
 }
 
-.twitter_number {
+/* .twitter_number {
     color: #6989f3;
     font-size: 25px;
-}
+} */
 
 .data_of_twitter {
     cursor: pointer;
@@ -227,13 +261,29 @@ h4.twitter_title:before {
     margin-bottom: 5px;
     margin-top: 0px;
     padding: 10px;
-    margin-left: 2.1em;
-    text-indent: -2.1em;
+    margin-left: 2.55em;
+    text-indent: -2.55em;
+}
+
+.twitter_trend:before{
+
+    /* number カウンタの増加数をセット */
+    counter-increment: number 1;
+
+    /* 表示形式を指定 */
+    content: counter(number) " ";
+
+    color: #6989f3;
+    font-size: 25px;
 }
 
 /* Googleトレンド関連 */
 
 #only_google_trends {
+
+    /* カウンター */
+    counter-reset: number 0;
+
     overflow: scroll;
     height: 32.18vh;
     box-shadow: 0 0 4px grey;
@@ -245,9 +295,10 @@ h4.twitter_title:before {
     display: none;
 }
 
-h4.google_title {
+h3.google_title {
     top: 0;
     margin-top: 0px;
+    margin-bottom: 10px;
     position: sticky;
     border-bottom: 3px solid #819dfa;
     background-color: lightgrey;
@@ -257,7 +308,7 @@ h4.google_title {
     padding-bottom: 10px;
 }
 
-h4.google_title:before {
+h3.google_title:before {
     font-family: 'Font Awesome 6 Brands';
     font-size: 30px;
     content: '\f1a0';
@@ -270,10 +321,10 @@ h4.google_title:before {
     transform: translateY(-50%);
 }
 
-.google_number {
+/* .google_number {
     font-size: 25px;
     color: #6989f3;
-}
+} */
 
 .data_of_google {
     cursor: pointer;
@@ -292,8 +343,20 @@ h4.google_title:before {
     margin-bottom: 5px;
     margin-top: 0px;
     padding: 10px;
-    margin-left: 2.1em;
-    text-indent: -2.1em;
+    margin-left: 2.55em;
+    text-indent: -2.55em;
+}
+
+.google_trend:before{
+    
+    /* number カウンタの増加数をセット */
+    counter-increment: number 1;
+
+    /* 表示形式を指定 */
+    content: counter(number) " ";
+         
+    color: #6989f3;
+    font-size: 25px;
 }
 
 /* footer関連 */
@@ -368,7 +431,10 @@ input {
 #twitter_menu_bar04:checked~#twitter_links04,
 #twitter_menu_bar05:checked~#twitter_links05,
 #twitter_menu_bar06:checked~#twitter_links06,
-#twitter_menu_bar07:checked~#twitter_links07 {
+#twitter_menu_bar07:checked~#twitter_links07,
+#twitter_menu_bar08:checked~#twitter_links08,
+#twitter_menu_bar09:checked~#twitter_links09,
+#twitter_menu_bar10:checked~#twitter_links10 {
     border-bottom: 1px solid #E6E7E8;
     height: 30px;
     opacity: 1;
@@ -413,12 +479,25 @@ input {
         margin-right: 1%;
     }
 
+    /* スマホ用のTBoSトレンド */
+
     #TBoS_trends {
         overflow: hidden;
         height: auto;
         width: 100%;
         padding-bottom: 30px;
     }
+
+    .tbos_trend {
+        font-size: 30px;
+    }
+
+    .data_of_tbos:hover {
+        color: #34495E;
+        text-decoration: none;
+    }
+
+    /* スマホ用のOnlyTwitterトレンド */
 
     #only_twitter_trends {
         overflow: hidden;
@@ -428,6 +507,25 @@ input {
 
     }
 
+    .twitter_trend {
+        font-size: 20px;
+    }
+
+    /* .twitter_number {
+        font-size: 30px;
+    } */
+
+    .twitter_trend:before{
+        font-size: 25px;
+    }
+
+    .data_of_twitter:hover {
+        color: #34495E;
+        text-decoration: none;
+    }
+
+    /* スマホ用のOnlyGoogleトレンド */
+
     #only_google_trends {
         overflow: hidden;
         height: auto;
@@ -435,25 +533,21 @@ input {
         margin-bottom: 15px;
     }
 
-    .tbos_trend {
-        font-size: 20px;
-    }
-
-    .twitter_trend {
-        font-size: 20px;
-    }
-
-    .twitter_number {
-        font-size: 30px;
-    }
 
     .google_trend {
         font-size: 20px;
     }
 
-    .google_number {
-        font-size: 30px;
+    .google_trend:before{
+        font-size: 25px;
     }
+
+    .data_of_google:hover {
+        color: #34495E;
+        text-decoration: none;
+    }
+
+    /* スマホ用のfooter */
 
     footer {
         /* background-color: white; */
