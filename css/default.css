@@ -9,7 +9,7 @@ body {
 
     /* フォント */
     font-family: sans-serif;
-    
+
     margin: 0;
 
     /* 文字選択の禁止 */
@@ -41,9 +41,14 @@ header {
     margin: 0;
 }
 
-.tbos_title{
-    width:120px;
-    height:35px;
+.tbos_logo {
+    height: 29px;
+    width: 49px;
+}
+
+.tbos_title {
+    width: 120px;
+    height: 35px;
 }
 
 /* スマホのみのナビ */
@@ -68,6 +73,7 @@ header {
 }
 
 .mobile_nav li {
+    font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
     padding-right: 15px;
@@ -117,14 +123,15 @@ main {
 
 h2 {
     position: sticky;
+    font-size: 28px;
     top: 0;
     margin-top: 0px;
     border-bottom: 3px solid #819dfa;
     background-color: lightgrey;
     color: #34495E;
-    padding-left: 75px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-left: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 h2:before {
@@ -158,17 +165,18 @@ h2:before {
 
 .tbos_trend {
     text-decoration: none;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 24px;
     margin-top: 25px;
     margin-bottom: 0px;
-    padding-right:10px;
+    padding-right: 10px;
     padding-left: 10px;
-    margin-left: 2.5em;
-    text-indent: -2.5em;
+    margin-left: 2.85em;
+    text-indent: -2.85em;
 }
 
 /* カウンター */
-.tbos_trend:before{
+.tbos_trend:before {
 
     /* number カウンタの増加数をセット */
     counter-increment: number 1;
@@ -177,7 +185,7 @@ h2:before {
     content: counter(number) " ";
 
     text-align: center;
-    
+
     color: orange;
     font-size: 35px;
 }
@@ -257,15 +265,16 @@ h3.twitter_title:before {
 
 .twitter_trend {
     color: cornflowerblue;
+    font-weight: bold;
     font-size: 20px;
     margin-bottom: 5px;
     margin-top: 0px;
     padding: 10px;
-    margin-left: 2.55em;
-    text-indent: -2.55em;
+    margin-left: 2.62em;
+    text-indent: -2.62em;
 }
 
-.twitter_trend:before{
+.twitter_trend:before {
 
     /* number カウンタの増加数をセット */
     counter-increment: number 1;
@@ -283,7 +292,6 @@ h3.twitter_title:before {
 
     /* カウンター */
     counter-reset: number 0;
-
     overflow: scroll;
     height: 32.18vh;
     box-shadow: 0 0 4px grey;
@@ -338,23 +346,24 @@ h3.google_title:before {
 }
 
 .google_trend {
+    font-weight: bold;
     color: cornflowerblue;
     font-size: 20px;
     margin-bottom: 5px;
     margin-top: 0px;
     padding: 10px;
-    margin-left: 2.55em;
-    text-indent: -2.55em;
+    margin-left: 2.62em;
+    text-indent: -2.62em;
 }
 
-.google_trend:before{
-    
+.google_trend:before {
+
     /* number カウンタの増加数をセット */
     counter-increment: number 1;
 
     /* 表示形式を指定 */
     content: counter(number) " ";
-         
+
     color: #6989f3;
     font-size: 25px;
 }
@@ -397,8 +406,8 @@ input {
     height: 1000px;
 }
 
-.tbos_news_link{
-    color:#6989f3;
+.tbos_news_link {
+    color: #6989f3;
 }
 
 /* TBoSのメニュー */
@@ -455,8 +464,8 @@ input {
 @media screen and (max-width: 767px) {
 
     .header_inner {
-        padding-top:8px;
-        padding-bottom:8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         /* height: 80px; */
     }
 
@@ -486,10 +495,11 @@ input {
         height: auto;
         width: 100%;
         padding-bottom: 30px;
+        margin-bottom: 50px;
     }
 
     .tbos_trend {
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .data_of_tbos:hover {
@@ -507,6 +517,10 @@ input {
 
     }
 
+    h3.twitter_title {
+        font-size: 23px;
+    }
+
     .twitter_trend {
         font-size: 20px;
     }
@@ -515,7 +529,7 @@ input {
         font-size: 30px;
     } */
 
-    .twitter_trend:before{
+    .twitter_trend:before {
         font-size: 25px;
     }
 
@@ -533,12 +547,15 @@ input {
         margin-bottom: 15px;
     }
 
+    h3.google_title {
+        font-size: 23px;
+    }
 
     .google_trend {
         font-size: 20px;
     }
 
-    .google_trend:before{
+    .google_trend:before {
         font-size: 25px;
     }
 
@@ -557,4 +574,5 @@ input {
         margin-bottom: 60px;
         text-align: center;
     }
+
 }
