@@ -4,14 +4,21 @@
 <head>
 
     <!-- システムへの指定 -->
+
+    <!-- 文字コード -->
     <meta charset="UTF-8">
+    <!-- IEに対する設定 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- ディスプレイサイズに対する設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 作成者 -->
     <meta name="author" content="Plain">
+    <!-- 検索した時に下に出る説明 -->
     <meta name="description" content="3つのビッグトレンドから真のトレンドを作成したアプリ">
+    <!-- キーワード(Chromeだと反応しない) -->
     <meta name="keywords" content="tbos,tbos.shop,trend,trends,ティーボス,トレンド,アプリ,ウェブサイト,ウェブアプリ">
 
-    <!-- OGP -->
+    <!-- OGP(SNSでの表示) -->
     <meta property="og:url" content="https://tbos.shop">
     <meta property="og:title" content="TBoS">
     <meta property="og:description" content="3つのビッグトレンドから真のトレンドを作成したアプリ">
@@ -22,18 +29,22 @@
     <title>TBoS</title>
 
     <!-- アイコン -->
-    <link rel="icon" type="image/png" href="img/TBoS_icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/TBoS_icon_ios.png">
+    <link rel="icon" type="image/png" href="/img/TBoS_icon.png">
+    <!-- Appleのアイコン -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/TBoS_icon_ios.png">
 
     <!-- CSS読み込み -->
+
+    <!-- twitterなどのアイコンに使うcss -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="css/default.css">
+    <!-- 基本のcss -->
+    <link rel="stylesheet" href="/css/default.css">
 
     <!-- jQuery.jsの読み込み -->
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
 
     <!-- Chart.jsの読み込み -->
-    <script src="js/chart.js"></script>
+    <script src="/js/chart.js"></script>
 
 </head>
 
@@ -45,8 +56,10 @@
         <div class="header_inner">
 
             <h1 class="title">
-                <img class="tbos_logo" src="img/TBoS_logo.png" alt="TBoS_logo"/>
-                <img class="tbos_title" src="img/TBoS_title.png" alt="TBoS"/>
+                <!-- ロゴ画像 -->
+                <img class="tbos_logo" src="/img/TBoS_logo.png" alt="TBoS_logo" />
+                <!-- TBoS文字画像 -->
+                <img class="tbos_title" src="/img/TBoS_title.png" alt="TBoS" />
             </h1>
 
         </div>
@@ -71,17 +84,22 @@
             <!-- TBosトレンド -->
             <div id="TBoS_trends">
 
+                <!-- TBoSタイトル -->
                 <h2>TBoSトレンド</h2>
 
+                <!-- TBoSコンテンツ一つ目、以下略 -->
                 <article class="tbos_content_1">
                     <label for="tbos_menu_bar01">
+                        <!-- トレンド名 -->
                         <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">エヴァンゲリオン</span></P>
                     </label>
                     <input type="checkbox" id="tbos_menu_bar01" />
                     <div class="content_text" id="tbos_links01">
+                        <!-- レーダーチャート -->
                         <div class="tbos_graph_parents">
                             <canvas id="RadarChart"></canvas>
                         </div>
+                        <!-- ニュースヘのリンク -->
                         <div>
                             <a class="tbos_news_link" href="https://tbos.shop">tbos.shop</a>
                         </div>
@@ -204,11 +222,13 @@
                 <!-- Twitterだけのトレンド -->
                 <div id="only_twitter_trends">
 
+                    <!-- OnlyTwitterトレンドのタイトル -->
                     <h3 class="twitter_title">OnlyTwitterトレンド</h3>
 
-
+                    <!-- Twitterコンテンツ一つ目、以下略 -->
                     <article class="twitter_content_1">
                         <label for="twitter_menu_bar01">
+                            <!-- トレンド名 -->
                             <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
                                     class="data_of_twitter">イレリアはライン戦にてEを当てるかどうかですべて決</span></P>
                         </label>
@@ -302,10 +322,13 @@
                 <!-- Googleだけのトレンド -->
                 <div id="only_google_trends">
 
+                    <!-- OnlyGoogleトレンドのタイトル -->
                     <h3 class="google_title">OnlyGoogleトレンド</h3>
 
+                    <!-- Googleコンテンツ一つ目、以下略 -->
                     <article class="google_content_1">
                         <label for="google_menu_bar01">
+                            <!-- トレンド名 -->
                             <P class="google_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_google">カサンテ</span></P>
                         </label>
                         <input type="checkbox" id="google_menu_bar01" />
@@ -331,6 +354,7 @@
                     </article>
 
                 </div>
+
             </div>
 
         </div>
@@ -347,8 +371,11 @@
     </footer>
 
     <!-- JavaScriptファイル記述部分 -->
-    <script src="js/default.js"></script>
-    <script src="js/graph.js"></script>
+
+    <!-- 雑多のjsをまとめたjs -->
+    <script src="/js/default.js"></script>
+    <!-- レーダーチャートを作成するためのjs -->
+    <script src="/js/graph.js"></script>
 
 </body>
 
