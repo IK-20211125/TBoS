@@ -24,6 +24,8 @@
     <meta property="og:description" content="3つのビッグトレンドから真のトレンドを作成したアプリ">
     <meta property="og:type" content="website">
 
+    <!-- pwaの設定json -->
+    <link rel="manifest" href="/manifest.json">
 
     <!-- タイトル -->
     <title>TBoS</title>
@@ -45,6 +47,18 @@
 
     <!-- Chart.jsの読み込み -->
     <script src="/js/chart.js"></script>
+
+    <!-- ServiceWorker(バックグラウンドで動くjs)の読み込み(pwa関連) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service_worker.js').then(registration => {
+                console.log('ServiceWorker registration successful.');
+            }).catch(err => {
+                console.log('ServiceWorker registration failed.');
+            });
+        }
+    </script>
+
 
 </head>
 
