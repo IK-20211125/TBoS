@@ -2,8 +2,6 @@
     "name": "TBoS",
     "short_name": "TBoS",
     "desctiption": "Trends Based on Statistics",
-    "theme_color": "#000000",
-    "background_color": "#000000",
     "display": "standalone",
     "start_url": "./index.html",
     "icons": [
@@ -14,4 +12,5 @@
       }
     ]
   }
+
   
