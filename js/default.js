@@ -26,4 +26,9 @@ function getNow() {
     var nowDate = year + "/" + mon + "/" + day;
 
     return nowDate;
-}
+};
+
+setTimeout(function () {
+    const spinner = document.getElementById('loading');
+    spinner.classList.add('loaded');
+}, 5500);
