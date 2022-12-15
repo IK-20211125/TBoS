@@ -27,8 +27,8 @@
     font-size: 10px;
     margin: 50px auto;
     text-indent: -9999em;
-    width: 11em;
-    height: 11em;
+    width: 5em;
+    height: 5em;
     border-radius: 50%;
     background: #ffffff;
     background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
@@ -671,6 +671,11 @@ input {
 /* スマホ用のレイアウト */
 
 @media screen and (max-width: 767px) {
+
+    .loader003 {
+        width: 3em;
+        height: 3em;
+    }
 
     .header_inner {
         padding-top: 8px;
