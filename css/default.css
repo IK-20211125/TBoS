@@ -97,6 +97,15 @@ main {
     margin-bottom: 0px;
 }
 
+#date {
+    position: absolute;
+    color: #34495E;
+    top: 67px;
+    left: 5px;
+    margin: 0px;
+    font-weight: bold;
+}
+
 .main_parents {
     display: flex;
     width: 70%;
@@ -158,6 +167,8 @@ h2:before {
     cursor: pointer;
     text-decoration: none;
     color: #34495E;
+
+
 }
 
 .data_of_tbos:hover {
@@ -173,29 +184,44 @@ h2:before {
     margin-bottom: 0px;
     padding-right: 10px;
     padding-left: 10px;
-    margin-left: 2.85em;
-    text-indent: -2.85em;
+    margin-left: 2.90em;
+    text-indent: -2.90em;
 }
 
 /* カウンター */
-.tbos_trend:before {
+/* .tbos_trend:before { */
 
-    /* number カウンタの増加数をセット */
-    counter-increment: number 1;
+/* number カウンタの増加数をセット */
+/* counter-increment: number 1; */
 
-    /* 表示形式を指定 */
-    content: counter(number) " ";
+/* 表示形式を指定 */
+/* content: counter(number) " ";
 
     text-align: center;
 
     color: orange;
-    font-size: 35px;
+    font-size: 35px; */
+/* } */
+
+.tbos_number {
+
+    text-align: center;
+    color: orange;
+    font-size: 32px;
+
+    /* widthを指定するためのdisplay */
+    display: inline-block;
+    width: 44px;
+
+    /* 継承の解除 */
+    margin-left: 0em;
+    text-indent: -0em;
 }
 
 
-.tbos_content_13 {
+/* .tbos_content_13 {
     display: none;
-}
+} */
 
 /* TBoS以外のトレンド */
 
@@ -272,20 +298,35 @@ h3.twitter_title:before {
     margin-bottom: 5px;
     margin-top: 0px;
     padding: 10px;
-    margin-left: 2.62em;
-    text-indent: -2.62em;
+    margin-left: 2.60em;
+    text-indent: -2.60em;
 }
 
-.twitter_trend:before {
+/* .twitter_trend:before { */
 
-    /* number カウンタの増加数をセット */
-    counter-increment: number 1;
+/* number カウンタの増加数をセット */
+/* counter-increment: number 1; */
 
-    /* 表示形式を指定 */
-    content: counter(number) " ";
+/* 表示形式を指定 */
+/* content: counter(number) " ";
 
     color: #6989f3;
+    font-size: 25px; */
+/* } */
+
+.twitter_number {
+
+    text-align: center;
+    color: #6989f3;
     font-size: 25px;
+
+    /* widthを指定するためのdisplay */
+    display: inline-block;
+    width: 38px;
+
+    /* 継承の解除 */
+    margin-left: 0em;
+    text-indent: -0em;
 }
 
 /* Googleトレンド関連 */
@@ -358,16 +399,31 @@ h3.google_title:before {
     text-indent: -2.62em;
 }
 
-.google_trend:before {
+/* .google_trend:before { */
 
-    /* number カウンタの増加数をセット */
-    counter-increment: number 1;
+/* number カウンタの増加数をセット */
+/* counter-increment: number 1; */
 
-    /* 表示形式を指定 */
-    content: counter(number) " ";
+/* 表示形式を指定 */
+/* content: counter(number) " ";
 
     color: #6989f3;
     font-size: 25px;
+} */
+
+.google_number {
+
+    text-align: center;
+    color: #6989f3;
+    font-size: 25px;
+
+    /* widthを指定するためのdisplay */
+    display: inline-block;
+    width: 38px;
+
+    /* 継承の解除 */
+    margin-left: 0em;
+    text-indent: -0em;
 }
 
 /* footer関連 */
@@ -410,26 +466,64 @@ input {
     height: 1000px;
 }
 
+.tbos_news {
+    padding: 5px;
+    padding-top: 10px;
+}
+
 .tbos_news_link {
+    font-size: 17px;
     color: #6989f3;
+}
+
+.tbos_news_link:hover {
+    text-decoration: underline;
+}
+
+.google_news {
+    padding: 5px;
+    padding-top: 0px;
+    padding-left: 15px;
+}
+
+.google_news_link {
+    font-size: 15px;
+    color: #6989f3;
+}
+
+.google_news_link:hover {
+    text-decoration: underline;
+}
+
+.google_picture{
+    width:50px;
+    height:50px;
 }
 
 /* TBoSのメニュー */
 
 
-#tbos_menu_bar01:checked~#tbos_links01,
-#tbos_menu_bar02:checked~#tbos_links02,
-#tbos_menu_bar03:checked~#tbos_links03,
-#tbos_menu_bar04:checked~#tbos_links04,
-#tbos_menu_bar05:checked~#tbos_links05,
-#tbos_menu_bar06:checked~#tbos_links06,
-#tbos_menu_bar07:checked~#tbos_links07,
-#tbos_menu_bar08:checked~#tbos_links08,
-#tbos_menu_bar09:checked~#tbos_links09,
+#tbos_menu_bar0:checked~#tbos_links0,
+#tbos_menu_bar1:checked~#tbos_links1,
+#tbos_menu_bar2:checked~#tbos_links2,
+#tbos_menu_bar3:checked~#tbos_links3,
+#tbos_menu_bar4:checked~#tbos_links4,
+#tbos_menu_bar5:checked~#tbos_links5,
+#tbos_menu_bar6:checked~#tbos_links6,
+#tbos_menu_bar7:checked~#tbos_links7,
+#tbos_menu_bar8:checked~#tbos_links8,
+#tbos_menu_bar9:checked~#tbos_links9,
 #tbos_menu_bar10:checked~#tbos_links10,
 #tbos_menu_bar11:checked~#tbos_links11,
 #tbos_menu_bar12:checked~#tbos_links12,
-#tbos_menu_bar11:checked~#tbos_links13 {
+#tbos_menu_bar13:checked~#tbos_links13,
+#tbos_menu_bar14:checked~#tbos_links14,
+#tbos_menu_bar15:checked~#tbos_links15,
+#tbos_menu_bar16:checked~#tbos_links16,
+#tbos_menu_bar17:checked~#tbos_links17,
+#tbos_menu_bar18:checked~#tbos_links18,
+#tbos_menu_bar19:checked~#tbos_links19,
+#tbos_menu_bar20:checked~#tbos_links20 {
     border-bottom: 1px solid #E6E7E8;
     height: 130px;
     opacity: 1;
@@ -438,28 +532,45 @@ input {
 
 /* Twitterのメニュー */
 
-#twitter_menu_bar01:checked~#twitter_links01,
-#twitter_menu_bar02:checked~#twitter_links02,
-#twitter_menu_bar03:checked~#twitter_links03,
-#twitter_menu_bar04:checked~#twitter_links04,
-#twitter_menu_bar05:checked~#twitter_links05,
-#twitter_menu_bar06:checked~#twitter_links06,
-#twitter_menu_bar07:checked~#twitter_links07,
-#twitter_menu_bar08:checked~#twitter_links08,
-#twitter_menu_bar09:checked~#twitter_links09,
-#twitter_menu_bar10:checked~#twitter_links10 {
+#twitter_menu_bar0:checked~#twitter_links0,
+#twitter_menu_bar1:checked~#twitter_links1,
+#twitter_menu_bar2:checked~#twitter_links2,
+#twitter_menu_bar3:checked~#twitter_links3,
+#twitter_menu_bar4:checked~#twitter_links4,
+#twitter_menu_bar5:checked~#twitter_links5,
+#twitter_menu_bar6:checked~#twitter_links6,
+#twitter_menu_bar7:checked~#twitter_links7,
+#twitter_menu_bar8:checked~#twitter_links8,
+#twitter_menu_bar9:checked~#twitter_links9,
+#twitter_menu_bar10:checked~#twitter_links10,
+#twitter_menu_bar11:checked~#twitter_links11,
+#twitter_menu_bar12:checked~#twitter_links12,
+#twitter_menu_bar13:checked~#twitter_links13,
+#twitter_menu_bar14:checked~#twitter_links14,
+#twitter_menu_bar15:checked~#twitter_links15,
+#twitter_menu_bar16:checked~#twitter_links16,
+#twitter_menu_bar17:checked~#twitter_links17,
+#twitter_menu_bar18:checked~#twitter_links18,
+#twitter_menu_bar19:checked~#twitter_links19 {
     border-bottom: 1px solid #E6E7E8;
-    height: 30px;
+    height: 60px;
     opacity: 1;
 }
 
 /* Googleのメニュー */
 
-#google_menu_bar01:checked~#google_links01,
-#google_menu_bar02:checked~#google_links02,
-#google_menu_bar03:checked~#google_links03 {
+#google_menu_bar0:checked~#google_links0,
+#google_menu_bar1:checked~#google_links1,
+#google_menu_bar2:checked~#google_links2,
+#google_menu_bar3:checked~#google_links3,
+#google_menu_bar4:checked~#google_links4,
+#google_menu_bar5:checked~#google_links5,
+#google_menu_bar6:checked~#google_links6,
+#google_menu_bar7:checked~#google_links7,
+#google_menu_bar8:checked~#google_links8,
+#google_menu_bar9:checked~#google_links9 {
     border-bottom: 1px solid #E6E7E8;
-    height: 30px;
+    height: 70px;
     opacity: 1;
 }
 
@@ -481,6 +592,18 @@ input {
         margin: 0px;
     }
 
+    #date {
+        position: absolute;
+        color: #34495E;
+        top: 67px;
+        left: 5px;
+        margin: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
     .others {
         height: auto;
     }
@@ -500,6 +623,7 @@ input {
         width: 100%;
         padding-bottom: 30px;
         margin-bottom: 50px;
+        margin-top: 35px;
     }
 
     .tbos_trend {

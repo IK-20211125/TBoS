@@ -124,6 +124,30 @@ twitter_element.insertAdjacentHTML('beforeend', '<h3 class="twitter_title">OnlyT
 google_element.insertAdjacentHTML('beforeend', '<h3 class="google_title">OnlyGoogleトレンド</h3>'
 );
 
+
+//添え字だけ表示
+
+for (let index = 0; index < 5; index++) {
+    tbos_element.insertAdjacentHTML('beforeend', '<article class="tbos_content_' + index + '">' +
+        '<P class="tbos_trend"><span class="tbos_number">' + (index + 1) + '</span></P></article>'
+    );
+};
+
+for (let index = 0; index < 20; index++) {
+
+    twitter_element.insertAdjacentHTML('beforeend', '<article class="twitter_content_' + index + '">' +
+        '<P class="twitter_trend"><span class="twitter_number">' + (index + 1) + '</span></P></article>'
+    );
+};
+
+for (let index = 0; index < 10; index++) {
+
+    google_element.insertAdjacentHTML('beforeend', '<article class="google_content_' + index + '">' +
+        '<P class="google_trend"><span class="google_number">' + (index + 1) + '</span></P></article>'
+    );
+};
+
+
 //トレンドを取得し、HTMLを作成する関数
 function GetTrends() {
 
