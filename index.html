@@ -47,6 +47,8 @@
 
     <!-- Chart.jsの読み込み -->
     <script src="/js/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
     <!-- ServiceWorker(バックグラウンドで動くjs)の読み込み(pwa関連) -->
     <script>
@@ -90,284 +92,25 @@
 
     </header>
 
+
     <!-- メインコンテンツ -->
     <main>
+
+        <p id="date"></p>
 
         <div class="main_parents">
 
             <!-- TBosトレンド -->
-            <div id="TBoS_trends">
-
-                <!-- TBoSタイトル -->
-                <h2>TBoSトレンド</h2>
-
-                <!-- TBoSコンテンツ一つ目、以下略 -->
-                <article class="tbos_content_1">
-                    <label for="tbos_menu_bar01">
-                        <!-- トレンド名 -->
-                        <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">エヴァンゲリオン</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar01" />
-                    <div class="content_text" id="tbos_links01">
-                        <!-- レーダーチャート -->
-                        <div class="tbos_graph_parents">
-                            <canvas id="RadarChart"></canvas>
-                        </div>
-                        <!-- ニュースヘのリンク -->
-                        <div>
-                            <a class="tbos_news_link" href="https://tbos.shop">tbos.shop</a>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="tbos_content_2">
-                    <label for="tbos_menu_bar02">
-                        <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">敷波明日香</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar02" />
-                    <div class="content_text" id="tbos_links02">test</div>
-                </article>
-
-
-                <article class="tbos_content_3">
-                    <label for="tbos_menu_bar03">
-                        <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">綾波レイ</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar03" />
-                    <div class="content_text" id="tbos_links03">test</div>
-                    </artcle>
-
-
-                    <article class="tbos_content_4">
-                        <label for="tbos_menu_bar04">
-                            <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">庵野</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar04" />
-                        <div class="content_text" id="tbos_links04">test</div>
-                    </article>
-
-
-                    <article class="tbos_content_5">
-                        <label for="tbos_menu_bar05">
-                            <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">iphone13</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar05" />
-                        <div class="content_text" id="tbos_links05">test</div>
-                    </article>
-
-
-                    <article class="tbos_content_6">
-                        <label for="tbos_menu_bar06">
-                            <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">12月2日4:00</span>
-                            </P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar06" />
-                        <div class="content_text" id="tbos_links06">test</div>
-                    </article>
-
-
-                    <article class="tbos_content_7">
-                        <label for="tbos_menu_bar07">
-                            <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">word</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar07" />
-                        <div class="content_text" id="tbos_links07">test</div>
-                    </article>
-
-
-                    <article class="tbos_content_8">
-                        <label for="tbos_menu_bar08">
-                            <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_tbos">TBoSはとてもよいですですHTMLで作成されています。</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar08" />
-                        <div class="content_text" id="tbos_links08">test</div>
-                    </article>
-
-
-                    <article class="tbos_content_9">
-                        <label for="tbos_menu_bar09">
-                            <P class="tbos_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_tbos">ヒロアカ</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar09" />
-                        <div class="content_text" id="tbos_links09">test</div>
-                    </article>
-
-
-                    <article class="tbos_content_10">
-                        <label for="tbos_menu_bar10">
-                            <P class="tbos_trend">&nbsp;&nbsp;<span class="data_of_tbos">岩垂</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar10" />
-                        <div class="content_text" id="tbos_links10">test</div>
-                    </article>
-
-                    <article class="tbos_content_11">
-                        <label for="tbos_menu_bar11">
-                            <P class="tbos_trend">&nbsp;&nbsp;<span class="data_of_tbos">川﨑稜真</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar11" />
-                        <div class="content_text" id="tbos_links11">test</div>
-                    </article>
-
-                    <article class="tbos_content_12">
-                        <label for="tbos_menu_bar12">
-                            <P class="tbos_trend">&nbsp;&nbsp;<span class="data_of_tbos">Deft</span>
-                            </P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar12" />
-                        <div class="content_text" id="tbos_links12">test</div>
-                    </article>
-
-                    <article class="tbos_content_13">
-                        <label for="tbos_menu_bar13">
-                            <P class="tbos_trend">&nbsp;&nbsp;<span class="data_of_tbos">Xiaohu</span></P>
-                        </label>
-                        <input type="checkbox" id="tbos_menu_bar13" />
-                        <div class="content_text" id="tbos_links13">test</div>
-                    </article>
-
-            </div>
+            <div id="TBoS_trends"></div>
 
             <!-- 他のトレンド -->
             <div class="others">
 
                 <!-- Twitterだけのトレンド -->
-                <div id="only_twitter_trends">
-
-                    <!-- OnlyTwitterトレンドのタイトル -->
-                    <h3 class="twitter_title">OnlyTwitterトレンド</h3>
-
-                    <!-- Twitterコンテンツ一つ目、以下略 -->
-                    <article class="twitter_content_1">
-                        <label for="twitter_menu_bar01">
-                            <!-- トレンド名 -->
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうかですべて決</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar01" />
-                        <div class="content_text" id="twitter_links01">test</div>
-                    </article>
-
-                    <article class="twitter_content_2">
-                        <label for="twitter_menu_bar02">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_twitter">イレリア</span>
-                            </P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar02" />
-                        <div class="content_text" id="twitter_links02">test</div>
-                    </article>
-
-                    <article class="twitter_content_3">
-                        <label for="twitter_menu_bar03">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar03" />
-                        <div class="content_text" id="twitter_links03">test</div>
-                    </article>
-
-                    <article class="twitter_content_4">
-                        <label for="twitter_menu_bar04">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_twitter">イレリアは</span>
-                            </P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar04" />
-                        <div class="content_text" id="twitter_links04">test</div>
-                    </article>
-
-                    <article class="twitter_content_5">
-                        <label for="twitter_menu_bar05">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるか</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar05" />
-                        <div class="content_text" id="twitter_links05">test</div>
-                    </article>
-
-                    <article class="twitter_content_6">
-                        <label for="twitter_menu_bar06">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうか</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar06" />
-                        <div class="content_text" id="twitter_links06">test</div>
-                    </article>
-
-                    <article class="twitter_content_7">
-                        <label for="twitter_menu_bar07">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうかですべて</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar07" />
-                        <div class="content_text" id="twitter_links07">test</div>
-                    </article>
-
-                    <article class="twitter_content_8">
-                        <label for="twitter_menu_bar08">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうかですべて</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar08" />
-                        <div class="content_text" id="twitter_links08">test</div>
-                    </article>
-
-                    <article class="twitter_content_9">
-                        <label for="twitter_menu_bar09">
-                            <P class="twitter_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうかですべて</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar09" />
-                        <div class="content_text" id="twitter_links09">test</div>
-                    </article>
-
-                    <article class="twitter_content_10">
-                        <label for="twitter_menu_bar10">
-                            <P class="twitter_trend">&nbsp;&nbsp;<span class="data_of_twitter">イレリアはライン</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar10" />
-                        <div class="content_text" id="twitter_links10">test</div>
-                    </article>
-
-
-                </div>
+                <div id="only_twitter_trends"></div>
 
                 <!-- Googleだけのトレンド -->
-                <div id="only_google_trends">
-
-                    <!-- OnlyGoogleトレンドのタイトル -->
-                    <h3 class="google_title">OnlyGoogleトレンド</h3>
-
-                    <!-- Googleコンテンツ一つ目、以下略 -->
-                    <article class="google_content_1">
-                        <label for="google_menu_bar01">
-                            <!-- トレンド名 -->
-                            <P class="google_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span class="data_of_google">カサンテ</span></P>
-                        </label>
-                        <input type="checkbox" id="google_menu_bar01" />
-                        <div class="content_text" id="google_links01">test</div>
-                    </article>
-
-                    <article class="google_content_2">
-                        <label for="google_menu_bar02">
-                            <P class="google_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_google">BlueStack</span></P>
-                        </label>
-                        <input type="checkbox" id="google_menu_bar02" />
-                        <div class="content_text" id="google_links02">test</div>
-                    </article>
-
-                    <article class="google_content_3">
-                        <label for="google_menu_bar03">
-                            <P class="google_trend">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_google">RiotGames</span></P>
-                        </label>
-                        <input type="checkbox" id="google_menu_bar03" />
-                        <div class="content_text" id="google_links03">test</div>
-                    </article>
-
-                </div>
+                <div id="only_google_trends"></div>
 
             </div>
 
@@ -386,10 +129,12 @@
 
     <!-- JavaScriptファイル記述部分 -->
 
+    <!-- HTMLを生成 -->
+    <script src="/js/trends_get_create_html.js"></script>
     <!-- 雑多のjsをまとめたjs -->
     <script src="/js/default.js"></script>
     <!-- レーダーチャートを作成するためのjs -->
-    <script src="/js/graph.js"></script>
+    <!-- <script src="js/graph.js"></script> -->
 
 </body>
 
