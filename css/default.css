@@ -262,12 +262,41 @@ h2:before {
     text-decoration: none;
     color: #34495E;
 
-
 }
 
 .data_of_tbos:hover {
     color: cornflowerblue;
     text-decoration: underline;
+}
+
+.light_true {
+
+    animation: flash 3s infinite;
+    /* アニメーションflashを1秒ごとに繰り返す */
+    background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
+    /* animation: gaming 2s linear infinite; */
+}
+
+@keyframes flash {
+
+    0%,
+    100% {
+        /* 明るく光るよう影を重ねる */
+        background-position-x: 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+    }
+
+    50% {
+        /* 淡く光るよう影を重ねる */
+        background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+    }
 }
 
 .tbos_trend {
@@ -562,7 +591,7 @@ input {
 
 .tbos_news {
     padding: 5px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .tbos_news_link {
@@ -573,6 +602,27 @@ input {
 .tbos_news_link:hover {
     text-decoration: underline;
 }
+
+.twitter_volume {
+    text-align: right;
+    font-size: small;
+    color: #34495E;
+    margin-top: 60px;
+    margin-left: 200px;
+}
+
+.tbos_twitter_news {
+    text-align: right;
+
+}
+
+.twitter_statistics {
+    font-size: small;
+    color: #34495E;
+    margin-top: 48px;
+    margin-left: 350px;
+}
+
 
 .google_news {
     padding: 5px;
@@ -616,8 +666,7 @@ input {
 #tbos_menu_bar16:checked~#tbos_links16,
 #tbos_menu_bar17:checked~#tbos_links17,
 #tbos_menu_bar18:checked~#tbos_links18,
-#tbos_menu_bar19:checked~#tbos_links19,
-#tbos_menu_bar20:checked~#tbos_links20 {
+#tbos_menu_bar19:checked~#tbos_links19 {
     border-bottom: 1px solid #E6E7E8;
     height: 130px;
     opacity: 1;
@@ -801,6 +850,22 @@ input {
         margin-bottom: 60px;
         text-align: center;
         position: unset;
+    }
+
+    .twitter_volume {
+        text-align: right;
+        font-size: small;
+        color: #34495E;
+        margin-top: 32px;
+        margin-left: 35px;
+    }
+
+    .twitter_statistics {
+        /* font-size: small; */
+        font-size:15px;
+        color: #34495E;
+        margin-top: 0px;
+        margin-left: 10px;
     }
 
 }
