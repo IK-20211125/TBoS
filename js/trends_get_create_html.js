@@ -297,7 +297,6 @@ function GetTrends() {
                                     twitter_volume[c] = object3[c].volume;
                                 }
                             }
-                            console.log("ツイート件数 " + twitter_volume);
 
                             //初回
                             if (g_counter === 1 && y_counter === 1 && t_counter === 1) {
@@ -366,7 +365,6 @@ function Create_trends() {
                 else {
                     var twitter_radar_data = 50;
                 }
-                console.log(twitter_radar_data);
                 // グラフのデータ
                 radar_data[radar_index] = [twitter_radar_data, 90, 0];
                 radar_index++;
@@ -422,7 +420,6 @@ function Create_trends() {
 
     }
 
-    console.log(radar_data);
 
     //onlygoogleトレンド作成
     only_google_trends = google_trends.filter(i => tbos_trends.indexOf(i) == -1);
@@ -454,9 +451,9 @@ function Create_trends() {
 
     for (let index = 0; index < twitter_deviation.length; index++) {
 
-        if (twitter_deviation[index] > 90) {
+        if (twitter_deviation[index] > 100) {
             tbos_element.insertAdjacentHTML('beforeend', '<article class="tbos_content_' + (tbos_trends.length + tbos_statistics_count) + '"><label for="tbos_menu_bar' + (tbos_trends.length + tbos_statistics_count) + '">' +
-                '<P class="tbos_trend"><span class="tbos_number" >' + (tbos_trends.length + tbos_statistics_count + 1) + '</span>&nbsp;&nbsp;&nbsp;<span class="data_of_tbos light_false" id="light' + (tbos_trends.length + tbos_statistics_count) + '" >' + twitter_trends[index] + '</span></P>' +
+                '<P class="tbos_trend"><span class="tbos_statistics_number" >' + (tbos_trends.length + tbos_statistics_count + 1) + '</span>&nbsp;&nbsp;&nbsp;<span class="data_of_tbos light_false" id="light' + (tbos_trends.length + tbos_statistics_count) + '" >' + twitter_trends[index] + '</span></P>' +
                 '</label><input type="checkbox" id="tbos_menu_bar' + (tbos_trends.length + tbos_statistics_count) + '" /><div class="content_text" id="tbos_links' + (tbos_trends.length + tbos_statistics_count) + '">' +
                 '<div class="tbos_news"><p class="twitter_statistics">Twitter内で急上昇中<br>ツイート件数 :  ' + twitter_volume[index] + '<br>ツイート偏差値 :  ' + twitter_deviation[index] + '</p></div></div></article>'
             );
@@ -576,7 +573,6 @@ function standardScore(array, avg, sd) {
 
 function statistics(array) {
 
-    console.log(array);
     for (var index = 0; index < array.length; index++) {
         // array[index] = array[index].replace("10000 ↓", "10000");
         if (typeof array[index] === 'string') {
@@ -586,8 +582,6 @@ function statistics(array) {
     let avg = average(array);
     let sd = standardDeviation(array, avg);
     let ssArr = standardScore(array, avg, sd);
-
-    console.log("偏差値" + ssArr);
 
     return ssArr;
 }
