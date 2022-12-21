@@ -622,7 +622,7 @@ input {
     font-size: small;
     color: #34495E;
     margin-top: 60px;
-    margin-left: 200px;
+    margin-left: 180px;
 }
 
 .tbos_twitter_news {
@@ -634,7 +634,7 @@ input {
     font-size: small;
     color: #34495E;
     margin-top: 48px;
-    margin-left: 350px;
+    margin-left: 330px;
 }
 
 
@@ -731,6 +731,136 @@ input {
     opacity: 1;
 }
 
+/* ハンバーガーメニュー */
+
+.header_inner_inner {
+    position: relative;
+    /* background-color: darkslateblue; */
+    background-color: rgb(61, 62, 139);
+    box-shadow: 0 0 10px grey;
+    margin-bottom: 17px;
+    height: 57px;
+}
+
+
+.menu-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    height: 55px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10003;
+    background-color: rgb(61, 62, 139, 0);
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.menu-btn span:before {
+    bottom: 8px;
+}
+
+.menu-btn span:after {
+    top: 8px;
+}
+
+
+#menu-btn-check:checked~.menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked~.menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#menu-btn-check:checked~.menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content ul {
+    padding: 0 10px 0;
+}
+
+.menu-content ul li {
+    list-style: none;
+}
+
+.menu-content ul li p {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    /* text-decoration: none; */
+    padding: 9px 15px 10px 0;
+    /* position: relative; */
+    text-align: left;
+    margin-top: 0px;
+}
+
+.menu-content ul li p::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    /*leftの値を変更してメニューを画面外へ*/
+    z-index: 10002;
+    background-color: whitesmoke;
+
+}
+
+
+#menu-btn-check:checked~.menu-content {
+    left: 0;
+    /*メニューを画面内へ*/
+}
+
+.html_active{
+    overflow: hidden;
+}
+
+.help_title {
+    color: black;
+    font-size: 22px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    text-decoration: underline rgb(61, 62, 139);
+}
+
+.help_writing {
+    color: #34495E;
+    ;
+    font-size: 15px;
+}
+
 /* スマホ用のレイアウト */
 
 @media screen and (max-width: 767px) {
@@ -744,6 +874,16 @@ input {
         padding-top: 8px;
         padding-bottom: 8px;
         /* height: 80px; */
+    }
+
+    .header_inner_inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        /* height: 80px; */
+    }
+
+    .menu-btn {
+        height: 72px;
     }
 
     .mobile_nav {

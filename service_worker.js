@@ -6,7 +6,7 @@ const urlsToCache = [
   './index.html',
   './js/chart.js',
   './js/default.js',
-  './js/graph.js',
+  './js/trends_get_create_html.js',
   './js/jquery.min.js',
   './img/TBoS_icon_ios.png',
   './img/TBoS_icon.png',

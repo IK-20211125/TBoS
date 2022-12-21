@@ -300,7 +300,6 @@ function GetTrends() {
 
                             //初回
                             if (g_counter === 1 && y_counter === 1 && t_counter === 1) {
-                                console.log("初回");
                                 g_counter++;
                                 y_counter++;
                                 t_counter++;
@@ -319,7 +318,6 @@ function GetTrends() {
 function Elementdelete() {
 
     //値の初期化処理
-    console.log("更新");
     g_judge = false;
     y_judge = false;
     t_judge = false;
@@ -335,6 +333,7 @@ function Elementdelete() {
 
 };
 
+// 動的なグラフに使う変数の宣言
 var radar_data = new Array;
 var radar_index = 0;
 for (var index = 0; index < 20; index++) {
@@ -359,6 +358,8 @@ function Create_trends() {
                 //tbosトレンドに入れる
                 tbos_trends.push(twitter_trends[a]);
                 tbos_twitter_volume.push(twitter_volume[a]);
+
+                //文字を一万に、統計的にグラフを表示
                 if (typeof twitter_volume[a] === 'number') {
                     var twitter_radar_data = Math.round(twitter_volume[a] / 10000) * 5 + 50;
                 }
@@ -395,7 +396,9 @@ function Create_trends() {
             //一致するキーワードがあった
             if (tyg_result != null) {
 
+                //グラフに値を入れる
                 radar_data[d][2] = 90;
+
                 //googleの添え字を調べる
                 // var g_index = google_trends.indexOf(google_trends[c]);
                 //google_result_array[index] = tyg_result;
@@ -407,7 +410,6 @@ function Create_trends() {
                 //Yahooの記事
                 // tbos_yahoo_trends_article.push(ty_yahoo_trends[c]);
                 // tbos_yahoo_trends_url.push(ty_yahoo_url[c]);
-                // console.log("完全一致" + tbos_trends_google);
                 //yahooとtwitterの一致は削除
                 // tbos_trends.splice(d, 1);
                 // ty_yahoo_trends.splice(d, 1);
@@ -441,11 +443,14 @@ function Create_trends() {
             '<div class="tbos_graph_parents"><canvas id="RadarChart' + index + '"></canvas></div><div class="tbos_news"><a class="tbos_news_link" href="' + tbos_yahoo_url[index] + '" target="_blank" rel="noopener noreferrer">' + tbos_yahoo_title[index] + '</a><p class="twitter_volume">ツイート件数 ' + tbos_twitter_volume[index] + '</p></div></div></article>'
         );
 
+        //3つのトレンドで一致した場合光る
         if (radar_data[index].at(0) >= 10 && radar_data[index].at(1) === 90 && radar_data[index].at(2) === 90) {
             let textLight = document.getElementById('light' + index);
             textLight.className = 'data_of_tbos light_true';
         }
     };
+
+    //Twitter内で急上昇ワードをTBoSトレンドに追加
 
     twitter_deviation = statistics(twitter_volume);
 
@@ -571,6 +576,7 @@ function standardScore(array, avg, sd) {
     return ssArr;
 }
 
+// 統計学
 function statistics(array) {
 
     for (var index = 0; index < array.length; index++) {
