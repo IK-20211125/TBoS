@@ -853,6 +853,7 @@ input {
     margin-bottom: 0px;
     font-weight: bold;
     text-decoration: underline rgb(61, 62, 139);
+    -webkit-text-decoration: underline rgb(61, 62, 139);
 }
 
 .help_writing {
