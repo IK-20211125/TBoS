@@ -35,7 +35,7 @@ function getNow() {
 setTimeout(function () {
     const spinner = document.getElementById('loading');
     spinner.classList.add('loaded');
-}, 5500);
+}, 1400);
 
 var flag = false;
 

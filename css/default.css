@@ -270,34 +270,19 @@ h2:before {
 }
 
 .light_true {
-
-    animation: flash 3s infinite;
-    /* アニメーションflashを1秒ごとに繰り返す */
-    background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
-    /* animation: gaming 2s linear infinite; */
+    background: linear-gradient(to right, #e60000, #f39800, #fff100, #009944, #0068b7, #1d2088, #920783, #e60000) 0% / 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 3s flash linear infinite;
 }
 
 @keyframes flash {
-
-    0%,
     100% {
-        /* 明るく光るよう影を重ねる */
-        background-position-x: 200%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-fill-color: transparent;
-    }
-
-    50% {
-        /* 淡く光るよう影を重ねる */
-        background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-fill-color: transparent;
+        background-position: 200%;
     }
 }
+
 
 .tbos_trend {
     text-decoration: none;
@@ -341,7 +326,7 @@ h2:before {
     text-indent: -0em;
 }
 
-.tbos_statistics_number{
+.tbos_statistics_number {
     text-align: center;
     color: #6989f3;
     font-size: 32px;
@@ -604,6 +589,7 @@ input {
 }
 
 .tbos_news {
+    width: 75%;
     padding: 5px;
     padding-top: 20px;
 }
@@ -622,7 +608,7 @@ input {
     font-size: small;
     color: #34495E;
     margin-top: 60px;
-    margin-left: 180px;
+    /* margin-left: 180px; */
 }
 
 .tbos_twitter_news {
@@ -631,10 +617,11 @@ input {
 }
 
 .twitter_statistics {
+    text-align: right;
     font-size: small;
     color: #34495E;
     margin-top: 48px;
-    margin-left: 330px;
+    /* margin-left: 330px; */
 }
 
 
@@ -753,7 +740,7 @@ input {
     justify-content: center;
     align-items: center;
     z-index: 10003;
-    background-color: rgb(61, 62, 139, 0);
+    background-color: rgb(61, 62, 139, 1);
 }
 
 .menu-btn span,
@@ -779,6 +766,8 @@ input {
 
 #menu-btn-check:checked~.menu-btn span {
     background-color: rgba(255, 255, 255, 0);
+
+
     /*メニューオープン時は真ん中の線を透明にする*/
 }
 
@@ -843,24 +832,24 @@ input {
     /*メニューを画面内へ*/
 }
 
-.html_active{
+.html_active {
     overflow: hidden;
 }
 
 .help_title {
-    color: black;
+    color: rgb(55, 55, 59);
     font-size: 22px;
     margin-bottom: 0px;
     font-weight: bold;
-    text-decoration: underline rgb(61, 62, 139);
-    -webkit-text-decoration: underline rgb(61, 62, 139);
+    border-bottom: solid 3px rgb(61, 62, 139);
+    /* text-decoration: underline 3px  rgb(61, 62, 139);
+    -webkit-text-decoration: underline 3px rgb(61, 62, 139); */
 }
 
-.help_writing {
+/* .help_writing {
     color: #34495E;
-    ;
     font-size: 15px;
-}
+} */
 
 /* スマホ用のレイアウト */
 
@@ -1012,15 +1001,21 @@ input {
         font-size: small;
         color: #34495E;
         margin-top: 32px;
-        margin-left: 35px;
+        /* margin-left: 35px; */
     }
 
     .twitter_statistics {
-        /* font-size: small; */
-        font-size:15px;
+        text-align: right;
+        font-size: small;
+        /* font-size: 13px; */
         color: #34495E;
-        margin-top: 0px;
-        margin-left: 10px;
+        margin-top: 44px;
+        /* margin-left: 10px; */
     }
+
+    .q_footer {
+        display: none;
+    }
+
 
 }

@@ -37,18 +37,18 @@ var ty_value;
 var tyg_result;
 var tyg_value;
 //取得したデータを比較する(1:前回,2:最新)
-var g_comparison1;
-var g_comparison2;
+var tbos_comparison1;
+var tbos_comparison2;
 var y_comparison1;
 var y_comparison2;
 var t_comparison1;
 var t_comparison2;
 //初回であるかそうでないかを判定
-var g_counter = 0;
+var tbos_counter = 0;
 var y_counter = 0;
 var t_counter = 0;
 //値が更新されているかどうかを判定
-var g_judge = false;
+var tbos_judge = false;
 var y_judge = false;
 var t_judge = false;
 //トレンドの要素
@@ -83,6 +83,7 @@ var options = {
             display: false,
         },
     },
+    
     scales: {
         r: {
             //グラフの最小値・最大値
@@ -114,9 +115,7 @@ var options = {
 };
 
 //スプレットシートの値を取得するためのURL
-const GOOGLE_ENDPOINT = "https://script.google.com/macros/s/AKfycbyMriOIvoeSU5J4mHpNJj0CGB6knEpt-uwQz2ucF79-nhOij0-F-9pBCz4R6gCKnbeyQg/exec";
-const YAHOO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxw17J9uso3gk9nrrlKFV8r6ZAZxVRC34iQHPiysW0ORJMNsfEkrQ9rDMgNCS2ZfOSj/exec";
-const TWITTER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzlFovDNjUEIfvaGz0NUs6got89Gdb16pB2qIakaHU9LNbNt-V20jlt8ot-fq3W9omg7A/exec";
+const TBOS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxecRQdn34sjcBIUzkOWGDru_7895jcdoQZ_K2RIeClLSCvUo64re6vgZu5Pf7UfIELiA/exec";
 
 //タイトル作成
 tbos_element.insertAdjacentHTML('beforeend', '<h2>TBoSトレンド</h2>'
@@ -156,169 +155,118 @@ for (let index = 0; index < 10; index++) {
 function GetTrends() {
 
     //Googleの情報を取得する
-    fetch(GOOGLE_ENDPOINT)
+    fetch(TBOS_ENDPOINT)
         .then(response => response.json())
         /*成功した処理*/
         .then(data => {
             //JSONから配列に変換
             object = data;
             //初回
-            if (g_counter === 0) {
+            if (tbos_counter === 0) {
 
                 //配列に取得した値を代入
                 for (a = 0; a < object.length; a++) {
 
+                    //twitterキーワード
+                    twitter_trends[a] = object[a].twitter_keyword;
+                    //ツイート件数
+                    twitter_volume[a] = object[a].twitter_volume;
+                    //Yahoo!の記事(タイトル)
+                    yahoo_trends[a] = object[a].yahoo_article;
+                    //Yahoo!のURL
+                    yahoo_url[a] = object[a].yahoo_url;
                     //キーワード
-                    google_trends[a] = object[a].keyword;
-                    //記事のタイトル
-                    google_article[a] = object[a].article;
-                    //記事のURL
-                    google_url[a] = object[a].url;
+                    google_trends[a] = object[a].google_keyword;
+                    //Google記事のタイトル
+                    google_article[a] = object[a].google_article;
+                    //Google記事のURL
+                    google_url[a] = object[a].google_url;
                     //写真のURL
-                    google_picture[a] = object[a].picture;
-                    //取得時間
-                    // google_time[a] = object[a].time;
-                    //検索件数をカンマ区切りにする
-                    // google_num[a] = Number(object[a].num).toLocaleString();
-                    //トレンド入りした日付
-                    // google_date[a] = object[a].date;
+                    google_picture[a] = object[a].google_picture;
 
                 }
 
                 //取得したJSON形式のデータを文字列型に変換
-                g_comparison1 = JSON.stringify(object);
-                g_counter++;
+                tbos_comparison1 = JSON.stringify(object);
+                tbos_counter++;
 
             }
-            g_comparison2 = JSON.stringify(object);
+            tbos_comparison2 = JSON.stringify(object);
 
             //取得したjsonの値が前回と異なる
-            if (g_comparison1 !== g_comparison2) {
+            if (tbos_comparison1 !== tbos_comparison2) {
 
                 //値を更新
-                g_comparison1 = g_comparison2;
-                g_counter++;
-                g_judge = true;
+                tbos_comparison1 = tbos_comparison2;
+                tbos_counter++;
+                tbos_judge = true;
 
                 //配列に取得した値を代入
                 for (a = 0; a < object.length; a++) {
 
-                    google_trends[a] = object[a].keyword;
-                    google_article[a] = object[a].article;
-                    google_url[a] = object[a].url;
-                    google_picture[a] = object[a].picture;
-                    // google_time[a] = object[a].time;
-                    // google_num[a] = Number(object[a].num).toLocaleString();
-                    // google_date[a] = object[a].date;
+                    //twitterキーワード
+                    twitter_trends[a] = object[a].twitter_keyword;
+                    //ツイート件数
+                    twitter_volume[a] = object[a].twitter_volume;
+                    //Yahoo!の記事(タイトル)
+                    yahoo_trends[a] = object[a].yahoo_article;
+                    //Yahoo!のURL
+                    yahoo_url[a] = object[a].yahoo_url;
+                    //キーワード
+                    google_trends[a] = object[a].google_keyword;
+                    //Google記事のタイトル
+                    google_article[a] = object[a].google_article;
+                    //Google記事のURL
+                    google_url[a] = object[a].google_url;
+                    //写真のURL
+                    google_picture[a] = object[a].google_picture;
 
                 }
 
             }
 
-            //Yahoo!の情報を取得する
-            fetch(YAHOO_ENDPOINT)
-                .then(response => response.json())
-                /*成功した処理*/
-                .then(data => {
-                    //JSONから配列に変換
-                    object2 = data;
-                    //初回
-                    if (y_counter === 0) {
+            //twitterトレンド配列の空値を削除
+            twitter_trends = twitter_trends.filter(function(x){
+                return!(x==='');
+            })
+            //ツイート件数配列の空値を削除
+            twitter_volume = twitter_volume.filter(function(x){
+                return!(x==='');
+            })
+            //googleトレンド配列の空値を削除
+            google_trends = google_trends.filter(function(x){
+                return!(x==='');
+            })
+            //google記事(タイトル)配列の空値を削除
+            google_article = google_article.filter(function(x){
+                return!(x==='');
+            })
+            //google記事のURL配列の空値を削除
+            google_url = google_url.filter(function(x){
+                return!(x==='');
+            })
+            //googleの写真のURL配列の空値を削除
+            google_picture = google_picture.filter(function(x){
+                return!(x==='');
+            })
 
-                        //配列に取得した値を代入
-                        for (b = 0; b < object2.length; b++) {
-
-                            //記事のタイトル
-                            yahoo_trends[b] = object2[b].article;
-                            //URL
-                            yahoo_url[b] = object2[b].url;
-
-                        }
-
-                        //取得したJSON形式のデータを文字列型に変換
-                        y_comparison1 = JSON.stringify(object2);
-                        y_counter++;
-
-                    }
-                    y_comparison2 = JSON.stringify(object2);
-                    //取得したjsonの値が前回と異なる
-                    if (y_comparison1 !== y_comparison2) {
-
-                        //値を更新
-                        y_comparison1 = y_comparison2;
-                        y_counter++;
-                        y_judge = true;
-
-                        //配列に取得した値を代入
-                        for (b = 0; b < object2.length; b++) {
-                            yahoo_trends[b] = object2[b].article;
-                            yahoo_url[b] = object2[b].url;
-                        }
-
-                    }
-
-
-                    //Twitterの情報を取得する
-                    fetch(TWITTER_ENDPOINT)
-                        .then(response => response.json())
-                        /*成功した処理*/
-                        .then(data => {
-                            //JSONから配列に変換
-                            object3 = data;
-                            //初回
-                            if (t_counter === 0) {
-
-                                //配列に取得した値を代入
-                                for (c = 0; c < object3.length; c++) {
-
-                                    //キーワード
-                                    twitter_trends[c] = object3[c].keyword;
-                                    //ツイート件数
-                                    twitter_volume[c] = object3[c].volume;
-
-                                }
-
-                                //取得したJSON形式のデータを文字列型に変換
-                                t_comparison1 = JSON.stringify(object3);
-                                t_counter++;
-
-                            }
-                            t_comparison2 = JSON.stringify(object3);
-                            //取得したjsonの値が前回と異なる
-                            if (t_comparison1 !== t_comparison2) {
-
-                                //値を更新
-                                t_comparison1 = t_comparison2;
-                                t_counter++;
-                                t_judge = true;
-                                //配列に取得した値を代入
-                                for (c = 0; c < object3.length; c++) {
-                                    twitter_trends[c] = object3[c].keyword;
-                                    twitter_volume[c] = object3[c].volume;
-                                }
-                            }
-
-                            //初回
-                            if (g_counter === 1 && y_counter === 1 && t_counter === 1) {
-                                g_counter++;
-                                y_counter++;
-                                t_counter++;
-                                Create_trends();
-                                //スプレットシートの値が更新された    
-                            } else if (g_judge === true || y_judge === true || t_judge === true) {
-                                Elementdelete();
-                            }
-                        });
-                });
+            //初回
+            if (tbos_counter === 1) {
+                tbos_counter++;
+                Create_trends();
+                
+            //スプレットシートの値が更新された    
+            } else if (tbos_judge === true) {
+                Elementdelete();
+            }
         });
-
-}
+};
 
 //値の初期化
 function Elementdelete() {
 
     //値の初期化処理
-    g_judge = false;
+    tbos_judge = false;
     y_judge = false;
     t_judge = false;
     //前回のデータを削除
@@ -330,6 +278,7 @@ function Elementdelete() {
     tbos_google_trends_url.length = 0;
     tbos_yahoo_trends_article.length = 0;
     tbos_yahoo_trends_url.length = 0;
+    tbos_twitter_volume.length = 0;
 
 };
 
@@ -460,7 +409,7 @@ function Create_trends() {
             tbos_element.insertAdjacentHTML('beforeend', '<article class="tbos_content_' + (tbos_trends.length + tbos_statistics_count) + '"><label for="tbos_menu_bar' + (tbos_trends.length + tbos_statistics_count) + '">' +
                 '<P class="tbos_trend"><span class="tbos_statistics_number" >' + (tbos_trends.length + tbos_statistics_count + 1) + '</span>&nbsp;&nbsp;&nbsp;<span class="data_of_tbos light_false" id="light' + (tbos_trends.length + tbos_statistics_count) + '" >' + twitter_trends[index] + '</span></P>' +
                 '</label><input type="checkbox" id="tbos_menu_bar' + (tbos_trends.length + tbos_statistics_count) + '" /><div class="content_text" id="tbos_links' + (tbos_trends.length + tbos_statistics_count) + '">' +
-                '<div class="tbos_news"><p class="twitter_statistics">Twitter内で急上昇中<br>ツイート件数 :  ' + twitter_volume[index] + '<br>ツイート偏差値 :  ' + twitter_deviation[index] + '</p></div></div></article>'
+                '<div class="tbos_news"style="width:100%;"><p class="twitter_statistics">Twitter内で急上昇中<br>ツイート件数 :  ' + twitter_volume[index] + '<br>ツイート偏差値 :  ' + twitter_deviation[index] + '</p></div></div></article>'
             );
 
             tbos_statistics_count++;
@@ -535,11 +484,12 @@ function Create_trends() {
 
 //レーダーチャートの動的な生成
 function graph_animation(radar_data, radarChart) {
-    setTimeout(function () { radarChart.reset() }, 500);
+    // setTimeout(function () { radarChart.reset() }, 500);
+    // radarChart.reset();
     radarChart.update();
     radarChart.data.datasets[0].data = radar_data;
-    radarChart.options.animation.duration = 1000;
-    radarChart.options.animation.easing = 'linear'
+    // radarChart.options.animation.duration = 1000;
+    // radarChart.options.animation.easing = 'linear'
     radarChart.update();
 };
 
@@ -597,7 +547,7 @@ GetTrends();
 
 
 //2回目以降60秒ごと
-// setInterval("GetTrends()", 10000);
+// setInterval("GetTrends()", 600000);
 
 
 
