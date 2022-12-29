@@ -457,26 +457,31 @@ function Create_trends() {
 
     //グラフ作成
 
-    radarChart0 = new Chart(document.getElementById("RadarChart0"), { type, data, options });
-    radarChart1 = new Chart(document.getElementById("RadarChart1"), { type, data, options });
-    radarChart2 = new Chart(document.getElementById("RadarChart2"), { type, data, options });
-    radarChart3 = new Chart(document.getElementById("RadarChart3"), { type, data, options });
-    radarChart4 = new Chart(document.getElementById("RadarChart4"), { type, data, options });
-    radarChart5 = new Chart(document.getElementById("RadarChart5"), { type, data, options });
-    radarChart6 = new Chart(document.getElementById("RadarChart6"), { type, data, options });
-    radarChart7 = new Chart(document.getElementById("RadarChart7"), { type, data, options });
-    radarChart8 = new Chart(document.getElementById("RadarChart8"), { type, data, options });
-    radarChart9 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart10 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart11 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart12 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart13 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart14 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart15 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart16 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart17 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart18 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
-    radarChart19 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart0 = new Chart(document.getElementById("RadarChart0"), { type, data, options });
+    // radarChart1 = new Chart(document.getElementById("RadarChart1"), { type, data, options });
+    // radarChart2 = new Chart(document.getElementById("RadarChart2"), { type, data, options });
+    // radarChart3 = new Chart(document.getElementById("RadarChart3"), { type, data, options });
+    // radarChart4 = new Chart(document.getElementById("RadarChart4"), { type, data, options });
+    // radarChart5 = new Chart(document.getElementById("RadarChart5"), { type, data, options });
+    // radarChart6 = new Chart(document.getElementById("RadarChart6"), { type, data, options });
+    // radarChart7 = new Chart(document.getElementById("RadarChart7"), { type, data, options });
+    // radarChart8 = new Chart(document.getElementById("RadarChart8"), { type, data, options });
+    // radarChart9 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart10 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart11 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart12 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart13 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart14 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart15 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart16 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart17 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart18 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+    // radarChart19 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
+
+    for(var index = 0; index < tbos_trends.length ;index++){
+        const hoge = new Function('radarChart' + index + "= new Chart(document.getElementById('RadarChart" + index + "'), { type, data, options })");
+        hoge();
+    }
 
     //ここより下処理不動
 
