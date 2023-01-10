@@ -77,13 +77,16 @@ var data = {
 };
 
 var options = {
+    //アニメーション無効
+    animation: false,
+
     //タイトルの非表示
     plugins: {
         legend: {
             display: false,
         },
     },
-    
+
     scales: {
         r: {
             //グラフの最小値・最大値
@@ -226,36 +229,36 @@ function GetTrends() {
             }
 
             //twitterトレンド配列の空値を削除
-            twitter_trends = twitter_trends.filter(function(x){
-                return!(x==='');
+            twitter_trends = twitter_trends.filter(function (x) {
+                return !(x === '');
             })
             //ツイート件数配列の空値を削除
-            twitter_volume = twitter_volume.filter(function(x){
-                return!(x==='');
+            twitter_volume = twitter_volume.filter(function (x) {
+                return !(x === '');
             })
             //googleトレンド配列の空値を削除
-            google_trends = google_trends.filter(function(x){
-                return!(x==='');
+            google_trends = google_trends.filter(function (x) {
+                return !(x === '');
             })
             //google記事(タイトル)配列の空値を削除
-            google_article = google_article.filter(function(x){
-                return!(x==='');
+            google_article = google_article.filter(function (x) {
+                return !(x === '');
             })
             //google記事のURL配列の空値を削除
-            google_url = google_url.filter(function(x){
-                return!(x==='');
+            google_url = google_url.filter(function (x) {
+                return !(x === '');
             })
             //googleの写真のURL配列の空値を削除
-            google_picture = google_picture.filter(function(x){
-                return!(x==='');
+            google_picture = google_picture.filter(function (x) {
+                return !(x === '');
             })
 
             //初回
             if (tbos_counter === 1) {
                 tbos_counter++;
                 Create_trends();
-                
-            //スプレットシートの値が更新された    
+
+                //スプレットシートの値が更新された    
             } else if (tbos_judge === true) {
                 Elementdelete();
             }
@@ -478,7 +481,7 @@ function Create_trends() {
     // radarChart18 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
     // radarChart19 = new Chart(document.getElementById("RadarChart9"), { type, data, options });
 
-    for(var index = 0; index < tbos_trends.length ;index++){
+    for (var index = 0; index < tbos_trends.length; index++) {
         const hoge = new Function('radarChart' + index + "= new Chart(document.getElementById('RadarChart" + index + "'), { type, data, options })");
         hoge();
     }
