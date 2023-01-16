@@ -712,7 +712,17 @@ input {
 #google_menu_bar6:checked~#google_links6,
 #google_menu_bar7:checked~#google_links7,
 #google_menu_bar8:checked~#google_links8,
-#google_menu_bar9:checked~#google_links9 {
+#google_menu_bar9:checked~#google_links9,
+#google_menu_bar10:checked~#google_links10,
+#google_menu_bar11:checked~#google_links11,
+#google_menu_bar12:checked~#google_links12,
+#google_menu_bar13:checked~#google_links13,
+#google_menu_bar14:checked~#google_links14,
+#google_menu_bar15:checked~#google_links15,
+#google_menu_bar16:checked~#google_links16,
+#google_menu_bar17:checked~#google_links17,
+#google_menu_bar18:checked~#google_links18,
+#google_menu_bar19:checked~#google_links19 {
     border-bottom: 1px solid #E6E7E8;
     height: 70px;
     opacity: 1;
