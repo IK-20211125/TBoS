@@ -1,62 +1,128 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
 
 <head>
 
     <!-- システムへの指定 -->
+
+    <!-- 文字コード -->
     <meta charset="UTF-8">
+    <!-- IEに対する設定 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- ディスプレイサイズに対する設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 作成者 -->
+    <meta name="author" content="Plain">
+    <!-- 検索した時に下に出る説明 -->
+    <meta name="description" content="3つのビッグトレンドから真のトレンドを作成したアプリ">
+    <!-- キーワード(Chromeだと反応しない) -->
+    <meta name="keywords" content="tbos,tbos.shop,trend,trends,ティーボス,トレンド,アプリ,ウェブサイト,ウェブアプリ">
+
+    <!-- OGP(SNSでの表示) -->
+    <meta property="og:url" content="https://tbos.shop">
+    <meta property="og:title" content="TBoS">
+    <meta property="og:description" content="3つのビッグトレンドから真のトレンドを作成したアプリ">
+    <meta property="og:type" content="website">
+
+    <!-- pwaの設定json -->
+    <link rel="manifest" href="/manifest.json">
 
     <!-- タイトル -->
     <title>TBoS</title>
 
     <!-- アイコン -->
-    <link rel="icon" type="image/png" href="img/TBoS_icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/TBoS_icon_ios.png">
+    <link rel="icon" type="image/png" href="/img/TBoS_icon.png">
+    <!-- Appleのアイコン -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/TBoS_icon_ios.png">
 
     <!-- CSS読み込み -->
+
+    <!-- twitterなどのアイコンに使うcss -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="css/default.css">
+    <!-- 基本のcss -->
+    <link rel="stylesheet" href="/css/default.css">
 
     <!-- jQuery.jsの読み込み -->
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
 
     <!-- Chart.jsの読み込み -->
-    <script src="js/chart.js"></script>
+    <script src="/js/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
-    <!-- スムーズスクロール部分の記述 -->
+    <!-- ServiceWorker(バックグラウンドで動くjs)の読み込み(pwa関連) -->
     <script>
-        $(function () {
-            // #で始まるアンカーをクリックした場合に処理
-            $('a[href^=#]').click(function () {
-                // スクロールの速度
-                var speed = 400; // ミリ秒
-                // アンカーの値取得
-                var href = $(this).attr("href");
-                // 移動先を取得
-                var target = $(href == "#" || href == "" ? 'html' : href);
-                // 移動先を数値で取得
-                var position = target.offset().top;
-                // スムーススクロール
-                $('body,html').animate({ scrollTop: position }, speed, 'swing');
-                return false;
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service_worker.js').then(registration => {
+                // console.log('ServiceWorker registration successful.');
+            }).catch(err => {
+                // console.log('ServiceWorker registration failed.');
             });
-        });
+        }
     </script>
+
+    <!-- / は13個付与する -->
+
 
 </head>
 
 <body>
+
+    <!-- ロード画面 -->
+    <div id="loading">
+        <div class="loader003"></div>
+    </div>
 
     <header>
 
         <!-- タイトルヘッダー -->
         <div class="header_inner">
 
-            <p class="title">
-                TBoS
-            </p>
+
+            <h1 class="title">
+                <!-- ロゴ画像 -->
+                <img class="tbos_logo" src="/img/TBoS_logo.png" alt="TBoS_logo" />
+                <!-- TBoS文字画像 -->
+                <img class="tbos_title" src="/img/TBoS_title.png" alt="TBoS" />
+            </h1>
+
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-btn-check">
+                <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                <div class="menu-content">
+
+                    <div class="header_inner_inner">
+                        <h1 class="title">
+                            <img class="tbos_logo" src="/img/TBoS_logo.png" alt="TBoS_logo" />
+                            <img class="tbos_title" src="/img/TBoS_title.png" alt="TBoS" />
+                        </h1>
+                    </div>
+                    <ul>
+                        <li>
+                            <p><span class="help_title">TBoSトレンド</span></p>
+                            <p class="help_writing">3つのビッグトレンドからデータを取得し、統計学を活用して生成したトレンド。<br>
+                                TBoS ... Trends Based on Statistics<br>
+                            </p>
+                        </li>
+                        <li>
+                            <p><span class="help_title">OnlyTwitterトレンド</span></p>
+                            <p class="help_writing">TBoSトレンド以外のTwitterのトレンド。</p>
+                        </li>
+                        <li>
+                            <p><span class="help_title">OnlyGoogleトレンド</span></p>
+                            <p class="help_writing">TBoSトレンド以外のGoogleのトレンド。</p>
+                        </li>
+                    </ul>
+
+                    <footer class="q_footer">
+
+                        <!-- Q&A 著作権 -->
+                        <small>
+                            © 2022 Plain
+                        </small>
+                    </footer>
+                </div>
+            </div>
 
         </div>
 
@@ -72,259 +138,26 @@
 
     </header>
 
+
     <!-- メインコンテンツ -->
     <main>
+
+        <p id="date"></p>
 
         <div class="main_parents">
 
             <!-- TBosトレンド -->
-            <div id="TBoS_trends">
-
-                <h2>TBoSトレンド</h2>
-
-                <div class="tbos_content_1">
-                    <label for="tbos_menu_bar01">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">1</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">エヴァンゲリオン</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar01" />
-                    <div class="content_text" id="tbos_links01">
-                        <div class="tbos_graph_parents">
-                            <canvas id="RadarChart"></canvas>
-                        </div>
-                        <div>
-                            <a class="tbos_news_link" href="https://tbos.shop">tbos.shop</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="tbos_content_2">
-                    <label for="tbos_menu_bar02">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">2</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">敷波明日香</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar02" />
-                    <div class="content_text" id="tbos_links02">test</div>
-                </div>
-
-
-                <div class="tbos_content_3">
-                    <label for="tbos_menu_bar03">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">3</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">綾波レイ</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar03" />
-                    <div class="content_text" id="tbos_links03">test</div>
-                </div>
-
-
-                <div class="tbos_content_4">
-                    <label for="tbos_menu_bar04">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">4</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">庵野</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar04" />
-                    <div class="content_text" id="tbos_links04">test</div>
-                </div>
-
-
-                <div class="tbos_content_5">
-                    <label for="tbos_menu_bar05">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">5</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">iphone13</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar05" />
-                    <div class="content_text" id="tbos_links05">test</div>
-                </div>
-
-
-                <div class="tbos_content_6">
-                    <label for="tbos_menu_bar06">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">6</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">12月2日4:00</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar06" />
-                    <div class="content_text" id="tbos_links06">test</div>
-                </div>
-
-
-                <div class="tbos_content_7">
-                    <label for="tbos_menu_bar07">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">7</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">word</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar07" />
-                    <div class="content_text" id="tbos_links07">test</div>
-                </div>
-
-
-                <div class="tbos_content_8">
-                    <label for="tbos_menu_bar08">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">8</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">TBoS</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar08" />
-                    <div class="content_text" id="tbos_links08">test</div>
-                </div>
-
-
-                <div class="tbos_content_9">
-                    <label for="tbos_menu_bar09">
-                        <P class="tbos_trend">&nbsp;<span class="tbos_number">9</span>&nbsp;&nbsp;&nbsp;<span
-                                class="data_of_tbos">ヒロアカ</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar09" />
-                    <div class="content_text" id="tbos_links09">test</div>
-                </div>
-
-
-                <div class="tbos_content_10">
-                    <label for="tbos_menu_bar10">
-                        <P class="tbos_trend"><span class="tbos_number">10</span>&nbsp;&nbsp;<span
-                                class="data_of_tbos">岩垂</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar10" />
-                    <div class="content_text" id="tbos_links10">test</div>
-                </div>
-
-                <div class="tbos_content_11">
-                    <label for="tbos_menu_bar11">
-                        <P class="tbos_trend"><span class="tbos_number">11</span>&nbsp;&nbsp;<span
-                                class="data_of_tbos">川﨑稜真</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar11" />
-                    <div class="content_text" id="tbos_links11">test</div>
-                </div>
-
-                <div class="tbos_content_12">
-                    <label for="tbos_menu_bar12">
-                        <P class="tbos_trend"><span class="tbos_number">12</span>&nbsp;&nbsp;<span
-                                class="data_of_tbos">Deft</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar12" />
-                    <div class="content_text" id="tbos_links12">test</div>
-                </div>
-
-                <div class="tbos_content_13">
-                    <label for="tbos_menu_bar13">
-                        <P class="tbos_trend"><span class="tbos_number">13</span>&nbsp;&nbsp;<span
-                                class="data_of_tbos">Xiaohu</span></P>
-                    </label>
-                    <input type="checkbox" id="tbos_menu_bar13" />
-                    <div class="content_text" id="tbos_links13">test</div>
-                </div>
-
-            </div>
+            <div id="TBoS_trends"></div>
 
             <!-- 他のトレンド -->
             <div class="others">
 
                 <!-- Twitterだけのトレンド -->
-                <div id="only_twitter_trends">
-
-                    <h4 class="twitter_title">OnlyTwitterトレンド</h4>
-
-
-                    <div class="twitter_content_1">
-                        <label for="twitter_menu_bar01">
-                            <P class="twitter_trend">&nbsp;<span class="twitter_number">1</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうかですべて決ま</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar01" />
-                        <div class="content_text" id="twitter_links01">test</div>
-                    </div>
-
-                    <div class="twitter_content_2">
-                        <label for="twitter_menu_bar02">
-                            <P class="twitter_trend">&nbsp;<span class="twitter_number">2</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリア</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar02" />
-                        <div class="content_text" id="twitter_links02">test</div>
-                    </div>
-
-                    <div class="twitter_content_3">
-                        <label for="twitter_menu_bar03">
-                            <P class="twitter_trend">&nbsp;<span class="twitter_number">3</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar03" />
-                        <div class="content_text" id="twitter_links03">test</div>
-                    </div>
-
-                    <div class="twitter_content_4">
-                        <label for="twitter_menu_bar04">
-                            <P class="twitter_trend">&nbsp;<span class="twitter_number">4</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアは</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar04" />
-                        <div class="content_text" id="twitter_links04">test</div>
-                    </div>
-
-                    <div class="twitter_content_5">
-                        <label for="twitter_menu_bar05">
-                            <P class="twitter_trend">&nbsp;<span class="twitter_number">5</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるか</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar05" />
-                        <div class="content_text" id="twitter_links05">test</div>
-                    </div>
-
-                    <div class="twitter_content_6">
-                        <label for="twitter_menu_bar06">
-                            <P class="twitter_trend">&nbsp;<span class="twitter_number">6</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうか</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar06" />
-                        <div class="content_text" id="twitter_links06">test</div>
-                    </div>
-
-                    <div class="twitter_content_7">
-                        <label for="twitter_menu_bar07">
-                            <P class="twitter_trend">&nbsp;<span class="twitter_number">7</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_twitter">イレリアはライン戦にてEを当てるかどうかですべて</span></P>
-                        </label>
-                        <input type="checkbox" id="twitter_menu_bar07" />
-                        <div class="content_text" id="twitter_links07">test</div>
-                    </div>
-
-
-                </div>
+                <div id="only_twitter_trends"></div>
 
                 <!-- Googleだけのトレンド -->
-                <div id="only_google_trends">
+                <div id="only_google_trends"></div>
 
-                    <h4 class="google_title">OnlyGoogleトレンド</h4>
-
-                    <div class="google_content_1">
-                        <label for="google_menu_bar01">
-                            <P class="google_trend">&nbsp;<span class="google_number">1</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_google">カサンテ</span></P>
-                        </label>
-                        <input type="checkbox" id="google_menu_bar01" />
-                        <div class="content_text" id="google_links01">test</div>
-                    </div>
-
-                    <div class="google_content_2">
-                        <label for="google_menu_bar02">
-                            <P class="google_trend">&nbsp;<span class="google_number">2</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_google">BlueStack</span></P>
-                        </label>
-                        <input type="checkbox" id="google_menu_bar02" />
-                        <div class="content_text" id="google_links02">test</div>
-                    </div>
-
-                    <div class="google_content_3">
-                        <label for="google_menu_bar03">
-                            <P class="google_trend">&nbsp;<span class="google_number">3</span>&nbsp;&nbsp;&nbsp;<span
-                                    class="data_of_google">RiotGames</span></P>
-                        </label>
-                        <input type="checkbox" id="google_menu_bar03" />
-                        <div class="content_text" id="google_links03">test</div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
@@ -335,14 +168,16 @@
 
         <!-- 著作権 -->
         <small>
-            <!-- <a class="steganography" href="https://github.com/IK-20211125">GitHub</a> -->
             © 2022 Plain
         </small>
     </footer>
 
     <!-- JavaScriptファイル記述部分 -->
-    <script src="js/default.js"></script>
-    <script src="js/graph.js"></script>
+
+    <!-- HTMLを生成 -->
+    <script src="/js/trends_get_create_html.js"></script>
+    <!-- 雑多のjsをまとめたjs -->
+    <script src="/js/default.js"></script>
 
 </body>
 
